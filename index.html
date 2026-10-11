@@ -1,60 +1,196 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="night" data-motion="gentle">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Octagon Religious-Research Group (ORG)</title>
-  <meta name="description" content="Octagon Religious-Research Group and Spirituality Centers. Where science and spirituality meet." />
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <meta name="description" content="Octagon Religious-Research Group. Where science and spirituality meet. Nine doors into orgspirituality.org, and ORG's changelog and library." />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta property="og:title" content="Octagon Religious-Research Group (ORG)" />
+  <meta property="og:description" content="Where science and spirituality meet. A member-governed spiritual and research community." />
+  <meta property="og:image" content="https://octagon-religious-research-group-org.github.io/social-card.jpg" />
+  <meta property="og:url" content="https://octagon-religious-research-group-org.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://octagon-religious-research-group-org.github.io/social-card.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..600,0..100,0..1&family=Manrope:wght@400;600&family=Newsreader:opsz,wght@6..72,400&family=Hanken+Grotesk:wght@400;600&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..600,0..100,0..1&family=Manrope:wght@400;600;700&family=Newsreader:opsz,wght@6..72,400..600&family=Hanken+Grotesk:wght@400;600;700&family=Marcellus&family=Literata:opsz,wght@7..72,400..600&display=swap" />
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <script>
+    // Shared with the AstroLog (same origin): one light and one motion choice across ORG's pages.
+    (function () {
+      var d = document.documentElement, t, m;
+      try { t = localStorage.getItem("org-light"); m = localStorage.getItem("org-motion"); } catch (e) {}
+      d.dataset.theme = t === "night" || t === "prism" || t === "stone" ? t : "night";
+      var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+      d.dataset.motion = m === "still" || m === "gentle" ? m : reduce ? "still" : "gentle";
+    })();
+  </script>
   <style>
-    :root {
-      --bg: #f5f3fa; --fg: #221d33; --muted: #5e566e; --accent: #6b4fa0; --frame: #ffffff; --halo: #6b4fa0;
-      --glow: #ffffff; --head: "Newsreader", Georgia, serif; --body: "Hanken Grotesk", system-ui, sans-serif;
-      --settings: normal; color-scheme: light;
+    /* ORG's three proposed lights (Night Sanctuary, Prism Light, Stone & Lapis). Members are
+       voting; until they decide, every ORG page offers all three. */
+    :root, [data-theme="night"] {
+      --bg: #100e1c; --fg: #eee8f6; --heading: #f4effc; --muted: #b4abc9; --surface: #1a1730;
+      --surface-2: #221d3a; --border: #352d55; --accent: #e9be72; --on-accent: #1b1408;
+      --frame: #fff8e8; --halo: #c9a4ff; --glow: #2a1f52; --perf: rgba(238, 232, 246, 0.26);
+      --scrim: rgba(16, 14, 28, 0.6);
+      --head: "Fraunces", Georgia, serif; --body: "Manrope", system-ui, sans-serif; --settings: "SOFT" 60, "WONK" 1;
+      color-scheme: dark;
     }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #100e1c; --fg: #f4effc; --muted: #b4abc9; --accent: #e9be72; --frame: #fff8e8; --halo: #c9a4ff;
-        --glow: #2a1f52; --head: "Fraunces", Georgia, serif; --body: "Manrope", system-ui, sans-serif;
-        --settings: "SOFT" 60, "WONK" 1; color-scheme: dark;
-      }
+    [data-theme="prism"] {
+      --bg: #f5f3fa; --fg: #221d33; --heading: #221d33; --muted: #5e566e; --surface: #ffffff;
+      --surface-2: #ece8f6; --border: #dcd5ea; --accent: #6b4fa0; --on-accent: #ffffff;
+      --frame: #ffffff; --halo: #6b4fa0; --glow: #ffffff; --perf: rgba(34, 29, 51, 0.24);
+      --scrim: rgba(245, 243, 250, 0.68);
+      --head: "Newsreader", Georgia, serif; --body: "Hanken Grotesk", system-ui, sans-serif; --settings: normal;
+      color-scheme: light;
     }
+    [data-theme="stone"] {
+      --bg: #ecebe6; --fg: #1b2433; --heading: #1b2433; --muted: #4d5566; --surface: #f7f6f2;
+      --surface-2: #e3e1da; --border: #d0ccc0; --accent: #22408a; --on-accent: #ffffff;
+      --frame: #f7f6f2; --halo: #22408a; --glow: #f7f6f2; --perf: rgba(27, 36, 51, 0.26);
+      --scrim: rgba(236, 235, 230, 0.64);
+      --head: "Marcellus", Georgia, serif; --body: "Literata", Georgia, serif; --settings: normal;
+      color-scheme: light;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { background: var(--bg); }
     body {
-      margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 2.5rem 1.25rem;
-      box-sizing: border-box; text-align: center; color: var(--fg); font-family: var(--body);
-      background: radial-gradient(60% 55% at 50% 38%, var(--glow), var(--bg) 70%) var(--bg);
+      margin: 0; min-height: 100vh; color: var(--fg); background: var(--bg); font-family: var(--body);
+      font-size: 1.0625rem; line-height: 1.6; padding-bottom: 5.5rem; -webkit-font-smoothing: antialiased;
     }
-    main { display: grid; justify-items: center; gap: 1.1rem; max-width: 34rem; }
-    .mark { width: min(300px, 70vw); height: auto; }
-    .frame { stroke: var(--frame); }
-    .halo { stroke: var(--halo); opacity: .7; }
-    .spin { transform-box: view-box; transform-origin: 150px 150px; animation: spin 60s linear infinite; }
-    .pulse { animation: pulse 5s ease-in-out infinite alternate; }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    @keyframes pulse { from { opacity: .6; } to { opacity: 1; } }
-    @media (prefers-reduced-motion: reduce) { .spin, .pulse { animation: none; } }
-    h1 { font-family: var(--head); font-variation-settings: var(--settings); font-weight: 400; font-size: clamp(2rem, 6vw, 2.9rem); line-height: 1.08; margin: .6rem 0 0; text-wrap: balance; }
-    p { margin: 0; color: var(--muted); font-size: 1.1rem; }
-    nav { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; margin-top: 1rem; }
-    nav a {
-      --cut: 7px; padding: .65rem 1.15rem; text-decoration: none; font-weight: 600; font-size: .95rem;
-      color: var(--fg); background: color-mix(in srgb, var(--fg) 8%, transparent);
+    @media (max-width: 560px) { body { padding-bottom: 7.5rem; } }
+    a { color: var(--accent); text-underline-offset: 0.18em; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+    .field { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+    .marble { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+    .marble[data-fallback="true"] { background: radial-gradient(60% 55% at 50% 30%, var(--glow), var(--bg) 70%); }
+    .scrim { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 0, transparent 30vh, var(--scrim) 62vh); }
+
+    .bar {
+      position: relative; z-index: 2; display: flex; justify-content: flex-end; align-items: center;
+      gap: 0.6rem; max-width: 64rem; margin: 0 auto; padding: 1rem 1.25rem;
+    }
+    .oct {
+      --cut: 7px;
       clip-path: polygon(var(--cut) 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, var(--cut) 100%, 0 calc(100% - var(--cut)), 0 var(--cut));
     }
-    nav a:first-child { background: var(--accent); color: var(--bg); }
-    nav a:hover { color: var(--accent); }
-    nav a:first-child:hover { color: var(--bg); filter: brightness(1.08); }
-    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-    small { display: block; margin-top: 1.5rem; color: var(--muted); font-size: .85rem; }
-    small a { color: inherit; }
+    .lights { display: flex; gap: 0.3rem; }
+    .light {
+      --cut: 6px; width: 26px; height: 26px; padding: 0; border: 0; cursor: pointer; opacity: 0.55;
+      background: linear-gradient(135deg, var(--swatch-bg) 55%, var(--swatch-accent) 55%);
+    }
+    .light[aria-pressed="true"], .light:hover { opacity: 1; }
+    .motion {
+      width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center;
+      border: 1px solid var(--border); background: var(--surface); color: var(--accent); cursor: pointer; padding: 0;
+    }
+
+    main { position: relative; z-index: 1; max-width: 46rem; margin: 0 auto; padding: 0 1.25rem; }
+    .hero { display: grid; justify-items: center; text-align: center; gap: 0.9rem; padding: 1rem 0 3.5rem; }
+    .mark { width: min(260px, 64vw); height: auto; }
+    .frame { stroke: var(--frame); }
+    .halo { stroke: var(--halo); opacity: .7; }
+    [data-motion="gentle"] .spin { transform-box: view-box; transform-origin: 150px 150px; animation: spin 60s linear infinite; }
+    [data-motion="gentle"] .pulse { animation: pulse 5s ease-in-out infinite alternate; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    @keyframes pulse { from { opacity: .6; } to { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { .spin, .pulse { animation: none !important; } }
+    h1, h2 {
+      font-family: var(--head); font-variation-settings: var(--settings); font-weight: 400;
+      color: var(--heading); text-wrap: balance; margin: 0; letter-spacing: -0.01em;
+    }
+    h1 { font-size: clamp(2.1rem, 6.5vw, 3.2rem); line-height: 1.08; margin-top: 0.4rem; }
+    .tagline { margin: 0; color: var(--muted); font-size: 1.15rem; }
+    .about { margin: 0.4rem 0 0; max-width: 33rem; }
+
+    h2 { font-size: 1.6rem; margin: 0 0 0.4rem; }
+    /* Text that sits directly on the ink (not on a sheet) gets a halo in the page color. */
+    h1, h2, .tagline, .about, .section-intro { text-shadow: 0 0 14px var(--bg), 0 0 3px var(--bg); }
+    .section { margin: 0 0 3rem; }
+    .section-intro { margin: 0 0 1rem; color: var(--muted); }
+
+    /* Nine doors on one perforated sheet, like the home page of orgspirituality.org: tiles touch,
+       each draws its own top and left tear lines, and the sheet draws the outer right and bottom. */
+    .sheet9 {
+      --dash: 12px; --gap: 9px; --w: 3px; --step: calc(var(--dash) + var(--gap));
+      list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr);
+      background:
+        linear-gradient(to right, var(--perf) 0 var(--dash), transparent 0) bottom left / var(--step) var(--w) repeat-x,
+        linear-gradient(to bottom, var(--perf) 0 var(--dash), transparent 0) top right / var(--w) var(--step) repeat-y,
+        var(--surface);
+    }
+    .sheet9 li {
+      background:
+        linear-gradient(to right, var(--perf) 0 var(--dash), transparent 0) top left / var(--step) var(--w) repeat-x,
+        linear-gradient(to bottom, var(--perf) 0 var(--dash), transparent 0) top left / var(--w) var(--step) repeat-y;
+    }
+    .sheet9 a { display: flex; flex-direction: column; gap: 0.55rem; padding: 0.85rem 0.85rem 0.8rem; text-decoration: none; color: var(--heading); }
+    .sheet9 img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; }
+    .sheet9 span { text-align: center; font-weight: 600; font-size: 0.98rem; }
+    .sheet9 a:hover { background: var(--surface-2); }
+    .sheet9 a:hover span { color: var(--accent); }
+    .sheet9 .core span { color: var(--accent); }
+
+    .rows {
+      --dash: 12px; --gap: 9px; --w: 3px; --step: calc(var(--dash) + var(--gap));
+      list-style: none; margin: 0; padding: var(--w);
+      background:
+        linear-gradient(to right, var(--perf) 0 var(--dash), transparent 0) top left / var(--step) var(--w) repeat-x,
+        linear-gradient(to right, var(--perf) 0 var(--dash), transparent 0) bottom left / var(--step) var(--w) repeat-x,
+        linear-gradient(to bottom, var(--perf) 0 var(--dash), transparent 0) top left / var(--w) var(--step) repeat-y,
+        linear-gradient(to bottom, var(--perf) 0 var(--dash), transparent 0) top right / var(--w) var(--step) repeat-y,
+        var(--surface);
+    }
+    .rows li { position: relative; }
+    .rows li + li::before {
+      content: ""; position: absolute; top: 0; left: 0; right: 0; height: var(--w);
+      background: linear-gradient(to right, var(--perf) 0 var(--dash), transparent 0) 0 0 / var(--step) var(--w) repeat-x;
+    }
+    .rows a { display: grid; grid-template-columns: auto 1fr; gap: 0.9rem; align-items: center; padding: 0.95rem 1.1rem; text-decoration: none; color: var(--fg); }
+    .rows a:hover { background: var(--surface-2); }
+    .rows .ph { font-size: 1.4rem; color: var(--accent); }
+    .rows strong { display: block; font-family: var(--head); font-variation-settings: var(--settings); font-weight: 400; font-size: 1.2rem; color: var(--heading); line-height: 1.25; }
+    .rows a:hover strong { color: var(--accent); }
+    .rows small { display: block; color: var(--muted); font-size: 0.92rem; }
+
+    .foot {
+      position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; padding: 0.6rem 1.25rem; font-size: 0.82rem;
+      color: var(--muted); background: color-mix(in srgb, var(--bg) 86%, transparent);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    }
+    .foot::before {
+      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(to right, var(--perf) 0 12px, transparent 0) 0 0 / 21px 3px repeat-x;
+    }
+    .foot div { max-width: 64rem; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.25rem 1.1rem; }
+    .foot a { display: inline-flex; align-items: center; gap: 0.3rem; color: var(--muted); text-decoration: none; }
+    .foot a:hover { color: var(--accent); }
+    .foot b { color: var(--heading); }
+    @media (max-width: 560px) { .foot b { width: 100%; text-align: center; } }
+    @media (max-width: 480px) {
+      .sheet9 a { padding: 0.55rem 0.5rem 0.6rem; }
+      .sheet9 span { font-size: 0.85rem; }
+    }
   </style>
 </head>
 <body>
+  <div class="field" aria-hidden="true"><canvas class="marble" id="marble"></canvas><div class="scrim"></div></div>
+
+  <div class="bar">
+    <div class="lights" role="group" aria-label="Choose a light">
+      <button type="button" class="light oct" data-light="night" title="Night Sanctuary" aria-label="Night Sanctuary" style="--swatch-bg:#100e1c;--swatch-accent:#e9be72"></button>
+      <button type="button" class="light oct" data-light="prism" title="Prism Light" aria-label="Prism Light" style="--swatch-bg:#f5f3fa;--swatch-accent:#6b4fa0"></button>
+      <button type="button" class="light oct" data-light="stone" title="Stone &amp; Lapis" aria-label="Stone &amp; Lapis" style="--swatch-bg:#ecebe6;--swatch-accent:#22408a"></button>
+    </div>
+    <button type="button" class="motion" id="motion-toggle" aria-label="Pause the motion" title="Pause the motion"><i class="ph ph-pause" aria-hidden="true"></i></button>
+  </div>
+
   <main>
+    <section class="hero">
     <svg class="mark" viewBox="0 0 300 300" role="img" aria-label="The ORG octagon">
       <defs><radialGradient id="w0" cx="150" cy="150" r="132" gradientUnits="userSpaceOnUse"><stop offset="0.25" stop-color="#fff" stop-opacity="0.95"/><stop offset="0.55" stop-color="#5a43f0"/><stop offset="1" stop-color="#5a43f0" stop-opacity="0.85"/></radialGradient><radialGradient id="w1" cx="150" cy="150" r="132" gradientUnits="userSpaceOnUse"><stop offset="0.25" stop-color="#fff" stop-opacity="0.95"/><stop offset="0.55" stop-color="#9a4dff"/><stop offset="1" stop-color="#9a4dff" stop-opacity="0.85"/></radialGradient><radialGradient id="w2" cx="150" cy="150" r="132" gradientUnits="userSpaceOnUse"><stop offset="0.25" stop-color="#fff" stop-opacity="0.95"/><stop offset="0.55" stop-color="#d04ce8"/><stop offset="1" stop-color="#d04ce8" stop-opacity="0.85"/></radialGradient><radialGradient id="w3" cx="150" cy="150" r="132" gradientUnits="userSpaceOnUse"><stop offset="0.25" stop-color="#fff" stop-opacity="0.95"/><stop offset="0.55" stop-color="#e65aa8"/><stop offset="1" stop-color="#e65aa8" stop-opacity="0.85"/></radialGradient><radialGradient id="w4" cx="150" cy="150" r="132" gradientUnits="userSpaceOnUse"><stop offset="0.25" stop-color="#fff" stop-opacity="0.95"/><stop offset="0.55" stop-color="#f29a3a"/><stop offset="1" stop-color="#f29a3a" stop-opacity="0.85"/></radialGradient><radialGradient id="w5" cx="150" cy="150" r="132" gradientUnits="userSpaceOnUse"><stop offset="0.25" stop-color="#fff" stop-opacity="0.95"/><stop offset="0.55" stop-color="#e4d548"/><stop offset="1" stop-color="#e4d548" stop-opacity="0.85"/></radialGradient><radialGradient id="w6" cx="150" cy="150" r="132" gradientUnits="userSpaceOnUse"><stop offset="0.25" stop-color="#fff" stop-opacity="0.95"/><stop offset="0.55" stop-color="#6fd84a"/><stop offset="1" stop-color="#6fd84a" stop-opacity="0.85"/></radialGradient><radialGradient id="w7" cx="150" cy="150" r="132" gradientUnits="userSpaceOnUse"><stop offset="0.25" stop-color="#fff" stop-opacity="0.95"/><stop offset="0.55" stop-color="#3ccfe0"/><stop offset="1" stop-color="#3ccfe0" stop-opacity="0.85"/></radialGradient><radialGradient id="core" cx="150" cy="150" r="40" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff"/><stop offset="0.5" stop-color="#fff" stop-opacity="0.95"/><stop offset="1" stop-color="var(--halo)" stop-opacity="0"/></radialGradient><clipPath id="oct"><polygon points="99.5,28.0 200.5,28.0 272.0,99.5 272.0,200.5 200.5,272.0 99.5,272.0 28.0,200.5 28.0,99.5"/></clipPath><filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="8"/></filter></defs>
       <polygon class="halo" points="99.5,28.0 200.5,28.0 272.0,99.5 272.0,200.5 200.5,272.0 99.5,272.0 28.0,200.5 28.0,99.5" fill="none" stroke-width="12" filter="url(#blur)"/>
@@ -62,16 +198,89 @@
       <g class="frame" fill="none" stroke-width="6" stroke-linejoin="round"><polygon points="99.5,28.0 200.5,28.0 272.0,99.5 272.0,200.5 200.5,272.0 99.5,272.0 28.0,200.5 28.0,99.5"/><polygon points="134.7,113.0 165.3,113.0 187.0,134.7 187.0,165.3 165.3,187.0 134.7,187.0 113.0,165.3 113.0,134.7"/><line x1="134.7" y1="113.0" x2="99.5" y2="28.0"/><line x1="165.3" y1="113.0" x2="200.5" y2="28.0"/><line x1="187.0" y1="134.7" x2="272.0" y2="99.5"/><line x1="187.0" y1="165.3" x2="272.0" y2="200.5"/><line x1="165.3" y1="187.0" x2="200.5" y2="272.0"/><line x1="134.7" y1="187.0" x2="99.5" y2="272.0"/><line x1="113.0" y1="165.3" x2="28.0" y2="200.5"/><line x1="113.0" y1="134.7" x2="28.0" y2="99.5"/></g>
       <circle class="pulse" cx="150" cy="150" r="40" fill="url(#core)"/>
     </svg>
-    <h1>Octagon Religious&#8209;Research Group</h1>
-    <p>Where science and spirituality meet.</p>
-    <nav aria-label="ORG">
-      <a href="https://orgspirituality.org/">Visit orgspirituality.org</a>
-      <a href="https://github.com/Octagon-Religious-Research-Group-ORG">ORG on GitHub</a>
-    </nav>
-    <small>Previews of what the site could become:
-      <a href="https://drasticstatic.github.io/O-R-G-dapp-public-preview/">dApp</a>,
-      <a href="https://drasticstatic.github.io/O-R-G-astro-public/">changelog and map</a>,
-      <a href="https://org-new-look.netlify.app/">design directions</a>.</small>
+      <h1>Octagon Religious&#8209;Research Group</h1>
+      <p class="tagline">Where science and spirituality meet.</p>
+      <p class="about">A member-governed spiritual and research community. Members propose beliefs and keep the ones most of them agree on.</p>
+    </section>
+
+    <section class="section" aria-labelledby="doors">
+      <h2 id="doors">Enter through any door</h2>
+      <p class="section-intro">The same nine tabs as the home page of orgspirituality.org, one perforated sheet with ORG at its center.</p>
+      <ul class="sheet9">
+        <li><a href="https://orgspirituality.org/about"><img src="/tiles/about.webp" alt="" width="280" height="280" loading="lazy" /><span>About</span></a></li>
+        <li><a href="https://orgspirituality.org/community"><img src="/tiles/community.webp" alt="" width="280" height="280" loading="lazy" /><span>Community</span></a></li>
+        <li><a href="https://orgspirituality.org/beliefs"><img src="/tiles/beliefs.webp" alt="" width="280" height="280" loading="lazy" /><span>Beliefs</span></a></li>
+        <li><a href="https://orgspirituality.org/infrastructure"><img src="/tiles/infrastructure.webp" alt="" width="280" height="280" loading="lazy" /><span>Infrastructure</span></a></li>
+        <li><a href="https://orgspirituality.org/join" class="core"><img src="/tiles/core.webp" alt="" width="280" height="280" loading="lazy" /><span>Join ORG</span></a></li>
+        <li><a href="https://orgspirituality.org/research"><img src="/tiles/research.webp" alt="" width="280" height="280" loading="lazy" /><span>Research</span></a></li>
+        <li><a href="https://orgspirituality.org/legal"><img src="/tiles/legal.webp" alt="" width="280" height="280" loading="lazy" /><span>Legal</span></a></li>
+        <li><a href="https://orgspirituality.org/future-ideas"><img src="/tiles/future.webp" alt="" width="280" height="280" loading="lazy" /><span>Future</span></a></li>
+        <li><a href="https://orgspirituality.org/offerings"><img src="/tiles/gifts.webp" alt="" width="280" height="280" loading="lazy" /><span>Gifts</span></a></li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="record">
+      <h2 id="record">What's changed</h2>
+      <p class="section-intro">ORG's AstroLog keeps a plain-language record of the websites, credits who did the work, and explains how the pieces fit together.</p>
+      <ul class="rows">
+        <li><a href="/changelog-astro-public/"><i class="ph ph-door-open" aria-hidden="true"></i><span><strong>The AstroLog porch</strong><small>The latest changes, and who made them.</small></span></a></li>
+        <li><a href="/changelog-astro-public/changelog"><i class="ph ph-clock-counter-clockwise" aria-hidden="true"></i><span><strong>Changelog</strong><small>Every notable change, newest first.</small></span></a></li>
+        <li><a href="/changelog-astro-public/library"><i class="ph ph-books" aria-hidden="true"></i><span><strong>Library</strong><small>Longer write-ups on how the sites are built.</small></span></a></li>
+        <li><a href="/changelog-astro-public/map"><i class="ph ph-tree-structure" aria-hidden="true"></i><span><strong>Map</strong><small>How the code, hosting, and previews connect.</small></span></a></li>
+      </ul>
+    </section>
+
+    <section class="section" aria-labelledby="more">
+      <h2 id="more">Also here</h2>
+      <ul class="rows">
+        <li><a href="https://github.com/Octagon-Religious-Research-Group-ORG"><i class="ph ph-github-logo" aria-hidden="true"></i><span><strong>ORG on GitHub</strong><small>The organization profile and code.</small></span></a></li>
+        <li><a href="https://github.com/Octagon-Religious-Research-Group-ORG/brand-assets"><i class="ph ph-seal-check" aria-hidden="true"></i><span><strong>Brand assets</strong><small>The official octagon logo files and usage guidelines.</small></span></a></li>
+        <li><a href="https://org-new-look.netlify.app/"><i class="ph ph-compass-tool" aria-hidden="true"></i><span><strong>Design directions</strong><small>Renan Teixeira's three proposed looks, offered to members for a vote.</small></span></a></li>
+      </ul>
+    </section>
   </main>
+
+  <footer class="foot">
+    <div>
+      <b>Octagon Religious-Research Group</b>
+      <a href="/"><i class="ph ph-house" aria-hidden="true"></i>Entry portal</a>
+      <a href="/changelog-astro-public/"><i class="ph ph-door-open" aria-hidden="true"></i>Porch</a>
+      <a href="/changelog-astro-public/changelog"><i class="ph ph-clock-counter-clockwise" aria-hidden="true"></i>Changelog</a>
+      <a href="/changelog-astro-public/library"><i class="ph ph-books" aria-hidden="true"></i>Library</a>
+      <a href="https://orgspirituality.org"><i class="ph ph-globe-hemisphere-west" aria-hidden="true"></i>orgspirituality.org</a>
+      <a href="https://github.com/Octagon-Religious-Research-Group-ORG/Octagon-Religious-Research-Group-ORG.github.io"><i class="ph ph-github-logo" aria-hidden="true"></i>Source</a>
+    </div>
+  </footer>
+
+  <script src="/marble.js" defer></script>
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var lights = document.querySelectorAll(".light");
+      function syncLights() { lights.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.light === root.dataset.theme)); }); }
+      lights.forEach(function (b) {
+        b.addEventListener("click", function () {
+          root.dataset.theme = b.dataset.light;
+          try { localStorage.setItem("org-light", b.dataset.light); } catch (e) {}
+          syncLights();
+        });
+      });
+      syncLights();
+      var motion = document.getElementById("motion-toggle");
+      function syncMotion() {
+        var still = root.dataset.motion === "still";
+        var label = still ? "Let it move" : "Pause the motion";
+        motion.setAttribute("aria-label", label); motion.setAttribute("title", label);
+        motion.setAttribute("aria-pressed", String(still));
+        motion.querySelector("i").className = "ph " + (still ? "ph-play" : "ph-pause");
+      }
+      motion.addEventListener("click", function () {
+        root.dataset.motion = root.dataset.motion === "still" ? "gentle" : "still";
+        try { localStorage.setItem("org-motion", root.dataset.motion); } catch (e) {}
+        syncMotion();
+      });
+      syncMotion();
+    })();
+  </script>
 </body>
 </html>
