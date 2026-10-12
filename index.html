@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="night" data-motion="gentle">
+<html lang="en" data-arrival-site="portal">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -18,75 +18,32 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..600,0..100,0..1&family=Manrope:wght@400;600;700&family=Newsreader:opsz,wght@6..72,400..600&family=Hanken+Grotesk:wght@400;600;700&family=Marcellus&family=Literata:opsz,wght@7..72,400..600&display=swap" />
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
-  <script>
-    // Shared with the AstroLog (same origin): one light and one motion choice across ORG's pages.
-    (function () {
-      var d = document.documentElement, t, m;
-      try { t = localStorage.getItem("org-light"); m = localStorage.getItem("org-motion"); } catch (e) {}
-      d.dataset.theme = t === "night" || t === "prism" || t === "stone" ? t : "night";
-      var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
-      d.dataset.motion = m === "still" || m === "gentle" ? m : reduce ? "still" : "gentle";
-    })();
-  </script>
+  <!-- ORG's arrival kit: one stylesheet + script shared with the AstroLog and the lab, served from
+       /arrival/ on this site. arrival.js applies the visitor's light, motion and contrast before
+       first paint, so it loads here in <head>. See arrival/arrival.js for what it provides. -->
+  <link rel="stylesheet" href="/arrival/arrival.css" />
+  <link rel="stylesheet" href="/arrival/org.css" />
+  <script src="/arrival/org.js"></script>
+  <script src="/arrival/arrival.js"></script>
   <style>
-    /* ORG's three proposed lights (Night Sanctuary, Prism Light, Stone & Lapis). Members are
-       voting; until they decide, every ORG page offers all three. */
-    :root, [data-theme="night"] {
-      --bg: #100e1c; --fg: #eee8f6; --heading: #f4effc; --muted: #b4abc9; --surface: #1a1730;
-      --surface-2: #221d3a; --border: #352d55; --accent: #e9be72; --on-accent: #1b1408;
-      --frame: #fff8e8; --halo: #c9a4ff; --glow: #2a1f52; --perf: rgba(238, 232, 246, 0.26);
-      --scrim: rgba(16, 14, 28, 0.6);
-      --head: "Fraunces", Georgia, serif; --body: "Manrope", system-ui, sans-serif; --settings: "SOFT" 60, "WONK" 1;
-      color-scheme: dark;
-    }
-    [data-theme="prism"] {
-      --bg: #f5f3fa; --fg: #221d33; --heading: #221d33; --muted: #5e566e; --surface: #ffffff;
-      --surface-2: #ece8f6; --border: #dcd5ea; --accent: #6b4fa0; --on-accent: #ffffff;
-      --frame: #ffffff; --halo: #6b4fa0; --glow: #ffffff; --perf: rgba(34, 29, 51, 0.24);
-      --scrim: rgba(245, 243, 250, 0.68);
-      --head: "Newsreader", Georgia, serif; --body: "Hanken Grotesk", system-ui, sans-serif; --settings: normal;
-      color-scheme: light;
-    }
-    [data-theme="stone"] {
-      --bg: #ecebe6; --fg: #1b2433; --heading: #1b2433; --muted: #4d5566; --surface: #f7f6f2;
-      --surface-2: #e3e1da; --border: #d0ccc0; --accent: #22408a; --on-accent: #ffffff;
-      --frame: #f7f6f2; --halo: #22408a; --glow: #f7f6f2; --perf: rgba(27, 36, 51, 0.26);
-      --scrim: rgba(236, 235, 230, 0.64);
-      --head: "Marcellus", Georgia, serif; --body: "Literata", Georgia, serif; --settings: normal;
-      color-scheme: light;
-    }
+    /* Colors, fonts and the three lights come from /arrival/org.css, shared with the AstroLog. */
     *, *::before, *::after { box-sizing: border-box; }
-    html { background: var(--bg); }
+    html { background: var(--background); }
     body {
-      margin: 0; min-height: 100vh; color: var(--fg); background: var(--bg); font-family: var(--body);
-      font-size: 1.0625rem; line-height: 1.6; padding-bottom: 5.5rem; -webkit-font-smoothing: antialiased;
+      margin: 0; min-height: 100vh; color: var(--foreground); background: var(--background); font-family: var(--font-body);
+      font-size: 1.0625rem; line-height: 1.6; padding-bottom: 4.5rem; -webkit-font-smoothing: antialiased;
     }
-    @media (max-width: 560px) { body { padding-bottom: 7.5rem; } }
     a { color: var(--accent); text-underline-offset: 0.18em; }
     :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
 
     .field { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
     .marble { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
-    .marble[data-fallback="true"] { background: radial-gradient(60% 55% at 50% 30%, var(--glow), var(--bg) 70%); }
+    .marble[data-fallback="true"] { background: radial-gradient(60% 55% at 50% 30%, var(--glow), var(--background) 70%); }
     .scrim { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 0, transparent 30vh, var(--scrim) 62vh); }
 
     .bar {
       position: relative; z-index: 2; display: flex; justify-content: flex-end; align-items: center;
       gap: 0.6rem; max-width: 64rem; margin: 0 auto; padding: 1rem 1.25rem;
-    }
-    .oct {
-      --cut: 7px;
-      clip-path: polygon(var(--cut) 0, calc(100% - var(--cut)) 0, 100% var(--cut), 100% calc(100% - var(--cut)), calc(100% - var(--cut)) 100%, var(--cut) 100%, 0 calc(100% - var(--cut)), 0 var(--cut));
-    }
-    .lights { display: flex; gap: 0.3rem; }
-    .light {
-      --cut: 6px; width: 26px; height: 26px; padding: 0; border: 0; cursor: pointer; opacity: 0.55;
-      background: linear-gradient(135deg, var(--swatch-bg) 55%, var(--swatch-accent) 55%);
-    }
-    .light[aria-pressed="true"], .light:hover { opacity: 1; }
-    .motion {
-      width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center;
-      border: 1px solid var(--border); background: var(--surface); color: var(--accent); cursor: pointer; padding: 0;
     }
 
     main { position: relative; z-index: 1; max-width: 46rem; margin: 0 auto; padding: 0 1.25rem; }
@@ -94,24 +51,28 @@
     .mark { width: min(260px, 64vw); height: auto; }
     .frame { stroke: var(--frame); }
     .halo { stroke: var(--halo); opacity: .7; }
-    [data-motion="gentle"] .spin { transform-box: view-box; transform-origin: 150px 150px; animation: spin 60s linear infinite; }
-    [data-motion="gentle"] .pulse { animation: pulse 5s ease-in-out infinite alternate; }
+    /* ORG's motion: the octagon turns (gentle), turns faster (vivid), or rests (still). */
+    :root:not([data-motion="still"]) .spin { transform-box: view-box; transform-origin: 150px 150px; animation: spin 60s linear infinite; }
+    :root[data-motion="vivid"] .spin { animation-duration: 22s; }
+    :root:not([data-motion="still"]) .pulse { animation: pulse 5s ease-in-out infinite alternate; }
     @keyframes spin { to { transform: rotate(360deg); } }
     @keyframes pulse { from { opacity: .6; } to { opacity: 1; } }
-    @media (prefers-reduced-motion: reduce) { .spin, .pulse { animation: none !important; } }
     h1, h2 {
-      font-family: var(--head); font-variation-settings: var(--settings); font-weight: 400;
+      font-family: var(--font-heading); font-variation-settings: var(--heading-settings); font-weight: 400;
       color: var(--heading); text-wrap: balance; margin: 0; letter-spacing: -0.01em;
     }
     h1 { font-size: clamp(2.1rem, 6.5vw, 3.2rem); line-height: 1.08; margin-top: 0.4rem; }
     .tagline { margin: 0; color: var(--muted); font-size: 1.15rem; }
     .about { margin: 0.4rem 0 0; max-width: 33rem; }
+    .hint { margin: 0.6rem 0 0; font-size: 0.92rem; }
+    .hint a { color: var(--accent); }
 
     h2 { font-size: 1.6rem; margin: 0 0 0.4rem; }
     /* Text that sits directly on the ink (not on a sheet) gets a halo in the page color. */
-    h1, h2, .tagline, .about, .section-intro { text-shadow: 0 0 14px var(--bg), 0 0 3px var(--bg); }
+    h1, h2, .tagline, .about, .hint, .section-intro, .sub { text-shadow: 0 0 14px var(--background), 0 0 3px var(--background); }
     .section { margin: 0 0 3rem; }
     .section-intro { margin: 0 0 1rem; color: var(--muted); }
+    .sub { margin: 1.4rem 0 0.6rem; font: 700 0.72rem/1.2 var(--font-body); letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
 
     /* Nine doors on one perforated sheet, like the home page of orgspirituality.org: tiles touch,
        each draws its own top and left tear lines, and the sheet draws the outer right and bottom. */
@@ -131,7 +92,7 @@
     .sheet9 a { display: flex; flex-direction: column; gap: 0.55rem; padding: 0.85rem 0.85rem 0.8rem; text-decoration: none; color: var(--heading); }
     .sheet9 img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; }
     .sheet9 span { text-align: center; font-weight: 600; font-size: 0.98rem; }
-    .sheet9 a:hover { background: var(--surface-2); }
+    .sheet9 a:hover { background: var(--surface-muted); }
     .sheet9 a:hover span { color: var(--accent); }
     .sheet9 .core span { color: var(--accent); }
 
@@ -150,28 +111,34 @@
       content: ""; position: absolute; top: 0; left: 0; right: 0; height: var(--w);
       background: linear-gradient(to right, var(--perf) 0 var(--dash), transparent 0) 0 0 / var(--step) var(--w) repeat-x;
     }
-    .rows a { display: grid; grid-template-columns: auto 1fr; gap: 0.9rem; align-items: center; padding: 0.95rem 1.1rem; text-decoration: none; color: var(--fg); }
-    .rows a:hover { background: var(--surface-2); }
+    .rows a { display: grid; grid-template-columns: auto 1fr; gap: 0.9rem; align-items: center; padding: 0.95rem 1.1rem; text-decoration: none; color: var(--foreground); }
+    .rows a:hover { background: var(--surface-muted); }
     .rows .ph { font-size: 1.4rem; color: var(--accent); }
-    .rows strong { display: block; font-family: var(--head); font-variation-settings: var(--settings); font-weight: 400; font-size: 1.2rem; color: var(--heading); line-height: 1.25; }
+    .rows strong { display: block; font-family: var(--font-heading); font-variation-settings: var(--heading-settings); font-weight: 400; font-size: 1.2rem; color: var(--heading); line-height: 1.25; }
     .rows a:hover strong { color: var(--accent); }
     .rows small { display: block; color: var(--muted); font-size: 0.92rem; }
 
+    /* The dock: one row, swipeable on phones rather than wrapping into the bottom of the screen. */
     .foot {
       position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; padding: 0.6rem 1.25rem; font-size: 0.82rem;
-      color: var(--muted); background: color-mix(in srgb, var(--bg) 86%, transparent);
+      color: var(--muted); background: color-mix(in srgb, var(--background) 86%, transparent);
       backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
     }
     .foot::before {
       content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
       background: linear-gradient(to right, var(--perf) 0 12px, transparent 0) 0 0 / 21px 3px repeat-x;
     }
-    .foot div { max-width: 64rem; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.25rem 1.1rem; }
+    .foot div {
+      max-width: 64rem; margin: 0 auto; display: flex; justify-content: safe center; gap: 0.25rem 1.1rem;
+      overflow-x: auto; scrollbar-width: none; white-space: nowrap;
+    }
+    .foot div::-webkit-scrollbar { display: none; }
+    .foot a, .foot b { flex: none; }
     .foot a { display: inline-flex; align-items: center; gap: 0.3rem; color: var(--muted); text-decoration: none; }
     .foot a:hover { color: var(--accent); }
     .foot b { color: var(--heading); }
-    @media (max-width: 560px) { .foot b { width: 100%; text-align: center; } }
-    @media (max-width: 480px) {
+    @media (max-width: 520px) {
+      .foot .long { display: none; }
       .sheet9 a { padding: 0.55rem 0.5rem 0.6rem; }
       .sheet9 span { font-size: 0.85rem; }
     }
@@ -181,12 +148,8 @@
   <div class="field" aria-hidden="true"><canvas class="marble" id="marble"></canvas><div class="scrim"></div></div>
 
   <div class="bar">
-    <div class="lights" role="group" aria-label="Choose a light">
-      <button type="button" class="light oct" data-light="night" title="Night Sanctuary" aria-label="Night Sanctuary" style="--swatch-bg:#100e1c;--swatch-accent:#e9be72"></button>
-      <button type="button" class="light oct" data-light="prism" title="Prism Light" aria-label="Prism Light" style="--swatch-bg:#f5f3fa;--swatch-accent:#6b4fa0"></button>
-      <button type="button" class="light oct" data-light="stone" title="Stone &amp; Lapis" aria-label="Stone &amp; Lapis" style="--swatch-bg:#ecebe6;--swatch-accent:#22408a"></button>
-    </div>
-    <button type="button" class="motion" id="motion-toggle" aria-label="Pause the motion" title="Pause the motion"><i class="ph ph-pause" aria-hidden="true"></i></button>
+    <!-- Search, the three lights + motion, and the light & motion drawer (arrival kit). -->
+    <arrival-controls></arrival-controls>
   </div>
 
   <main>
@@ -201,6 +164,7 @@
       <h1>Octagon Religious&#8209;Research Group</h1>
       <p class="tagline">Where science and spirituality meet.</p>
       <p class="about">A member-governed spiritual and research community. Members propose beliefs and keep the ones most of them agree on.</p>
+      <p class="hint arr-hint">Press <kbd>/</kbd> to search everything here and in the AstroLog. New here? <a href="#welcome" data-arrival-open="guide">Take the welcome tour</a>.</p>
     </section>
 
     <section class="section" aria-labelledby="doors">
@@ -222,12 +186,21 @@
     <section class="section" aria-labelledby="record">
       <h2 id="record">What's changed</h2>
       <p class="section-intro">ORG's AstroLog keeps a plain-language record of the websites, credits who did the work, and explains how the pieces fit together.</p>
+      <!-- Filled from the AstroLog's search.json (same origin), so it never goes stale. -->
+      <arrival-latest limit="4"></arrival-latest>
+      <p class="sub">Into the AstroLog</p>
       <ul class="rows">
         <li><a href="/changelog-astro-public/"><i class="ph ph-door-open" aria-hidden="true"></i><span><strong>The AstroLog porch</strong><small>The latest changes, and who made them.</small></span></a></li>
         <li><a href="/changelog-astro-public/changelog"><i class="ph ph-clock-counter-clockwise" aria-hidden="true"></i><span><strong>Changelog</strong><small>Every notable change, newest first.</small></span></a></li>
         <li><a href="/changelog-astro-public/library"><i class="ph ph-books" aria-hidden="true"></i><span><strong>Library</strong><small>Longer write-ups on how the sites are built.</small></span></a></li>
         <li><a href="/changelog-astro-public/map"><i class="ph ph-tree-structure" aria-hidden="true"></i><span><strong>Map</strong><small>How the code, hosting, and previews connect.</small></span></a></li>
       </ul>
+    </section>
+
+    <section class="section" aria-labelledby="people">
+      <h2 id="people">Who made the changes</h2>
+      <p class="section-intro">Named the way ORG's own profile names them. Every AstroLog entry credits whoever did the work.</p>
+      <arrival-people></arrival-people>
     </section>
 
     <section class="section" aria-labelledby="more">
@@ -242,45 +215,17 @@
 
   <footer class="foot">
     <div>
-      <b>Octagon Religious-Research Group</b>
+      <b>ORG<span class="long"> · Octagon Religious-Research Group</span></b>
       <a href="/"><i class="ph ph-house" aria-hidden="true"></i>Entry portal</a>
       <a href="/changelog-astro-public/"><i class="ph ph-door-open" aria-hidden="true"></i>Porch</a>
       <a href="/changelog-astro-public/changelog"><i class="ph ph-clock-counter-clockwise" aria-hidden="true"></i>Changelog</a>
       <a href="/changelog-astro-public/library"><i class="ph ph-books" aria-hidden="true"></i>Library</a>
       <a href="https://orgspirituality.org"><i class="ph ph-globe-hemisphere-west" aria-hidden="true"></i>orgspirituality.org</a>
+      <a href="#welcome" data-arrival-open="guide"><i class="ph ph-compass" aria-hidden="true"></i>Welcome guide</a>
       <a href="https://github.com/Octagon-Religious-Research-Group-ORG/Octagon-Religious-Research-Group-ORG.github.io"><i class="ph ph-github-logo" aria-hidden="true"></i>Source</a>
     </div>
   </footer>
 
   <script src="/marble.js" defer></script>
-  <script>
-    (function () {
-      var root = document.documentElement;
-      var lights = document.querySelectorAll(".light");
-      function syncLights() { lights.forEach(function (b) { b.setAttribute("aria-pressed", String(b.dataset.light === root.dataset.theme)); }); }
-      lights.forEach(function (b) {
-        b.addEventListener("click", function () {
-          root.dataset.theme = b.dataset.light;
-          try { localStorage.setItem("org-light", b.dataset.light); } catch (e) {}
-          syncLights();
-        });
-      });
-      syncLights();
-      var motion = document.getElementById("motion-toggle");
-      function syncMotion() {
-        var still = root.dataset.motion === "still";
-        var label = still ? "Let it move" : "Pause the motion";
-        motion.setAttribute("aria-label", label); motion.setAttribute("title", label);
-        motion.setAttribute("aria-pressed", String(still));
-        motion.querySelector("i").className = "ph " + (still ? "ph-play" : "ph-pause");
-      }
-      motion.addEventListener("click", function () {
-        root.dataset.motion = root.dataset.motion === "still" ? "gentle" : "still";
-        try { localStorage.setItem("org-motion", root.dataset.motion); } catch (e) {}
-        syncMotion();
-      });
-      syncMotion();
-    })();
-  </script>
 </body>
 </html>
