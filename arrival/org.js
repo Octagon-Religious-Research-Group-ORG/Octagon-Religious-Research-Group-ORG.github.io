@@ -98,6 +98,8 @@
 
     record: {
       intro: "ORG's AstroLog has two halves.",
+      share:
+        "Sharing one change? Every entry and every write-up has its own preview card. Paste its link into Telegram, iMessage or Discord and it arrives with its title, summary and who made it. The <strong>Copy a link</strong> button under each one does the copying.",
       changelog: {
         name: "The changelog",
         text: "Every notable change to ORG's websites, newest first. Each entry is a short summary with the full story underneath, filed under one of four areas: the live site, the API, ORG on GitHub, and previews and proposals.",

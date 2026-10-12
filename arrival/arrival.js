@@ -21,6 +21,7 @@
  *                         [data-arrival-open="guide"] element.
  *   "/" or Ctrl/⌘ K       quick search over ARRIVAL.search.sources (search.json files) plus links
  *                         and actions. [data-arrival-open="search"] opens it too.
+ *   [data-arrival-open="copy"]  copies the page's link and says it shares with its own card.
  *   <arrival-avatar name github email size>   GitHub picture, else Gravatar for an org-domain role
  *                         address only, else the org's initials SVG
  *   <arrival-people>, <arrival-latest limit>  rendered from the search.json people and entries
@@ -67,6 +68,7 @@
       moreAsked: "Your device asks for more contrast, so it's switched on.",
       nothing: "Nothing matches yet. Try a month, a name, or the word light.",
       followNow: "Right now",
+      copied: "Link copied. It shares with its own preview card.",
       cursor: "Cursor effects",
       cursorNote: "A trail of light behind your pointer, and ink that stirs as you move. Off for anyone who'd rather not.",
       cursorOn: "Turn cursor effects off",
@@ -653,7 +655,8 @@
             '<div class="arr-box arr-shape"><h3>' + icon("books") + esc(li.name || "The library") + "</h3>" +
             para(li.text || "How things work. Longer write-ups that stay true over time, rather than news of one change.") +
             (li.href ? link(li.href, li.label || "Open the library", "arrow-right") : li.missing ? placeholder(li.missing) : "") + "</div>" +
-            "</div>"
+            "</div>" +
+            (rec.share ? '<p class="arr-notice">' + icon("share-network") + "<span>" + rec.share + "</span></p>" : "")
           );
         },
       },
@@ -931,7 +934,7 @@
       });
     }
     out.push({ t: W.openGuide, k: "guide", i: "compass", x: "help onboarding tour welcome how", run: function () { openGuide(); } });
-    out.push({ t: "Copy a link to this page", k: "action", i: "link", x: "share url", run: copyLink });
+    out.push({ t: "Copy a link to this page", k: "action", i: "link", x: "share url card preview telegram", run: copyLink });
     return out;
   }
   function staticItems() {
@@ -1131,7 +1134,7 @@
   }
   function copyLink() {
     var url = location.href.replace(/#welcome$/, "");
-    var done = function () { toast("Link copied"); };
+    var done = function () { toast(W.copied); };
     try {
       navigator.clipboard.writeText(url).then(done, function () { toast(url); });
     } catch (e) {
@@ -1533,6 +1536,7 @@
     if (what === "search") openPalette();
     else if (what === "guide") openGuide(at || undefined);
     else if (what === "splash") openSplash();
+    else if (what === "copy") copyLink();
   }
   function close() {
     stack.slice().forEach(function (d) { hide(d); });
