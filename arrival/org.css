@@ -1,10 +1,10 @@
 /* ORG's look for the arrival kit, shared by every ORG page (entry portal, AstroLog, and the
    drasticstatic ORG lab). Load after arrival.css.
 
-   The three lights are ORG's own Design Directions proposal (Night Sanctuary, Prism Light,
-   Stone & Lapis), drawn up by Renan Teixeira and shared with members for a vote. None of them is
-   "the" ORG look until members decide, so every page offers all three as modes. Tokens are set on
-   attribute selectors so a light card in the splash can preview a mode by carrying data-theme. */
+   The three lights (Night Sanctuary, Prism Light, Stone & Lapis) began as Renan Teixeira's Design
+   Directions proposal, the spark for ORG's new builds. The proposal itself is now history (see the
+   AstroLog's /three-directions page); its looks live on as modes every page offers. Tokens are set
+   on attribute selectors so a light card in the splash can preview a mode by carrying data-theme. */
 
 :root,
 [data-theme="night"] {
@@ -204,4 +204,11 @@ arrival-avatar:not(:defined),
 }
 [data-theme="stone"] .arr-card-name {
   letter-spacing: 0.02em;
+}
+
+/* Reading mode (arrival kit wave 5): Stone & Lapis, still, more contrast, no trail. The marbled ink
+   behind every ORG page (portal and AstroLog .field, the lab's .hero-bg) fades back to a whisper. */
+:root[data-reading="on"] :is(.field, .hero-bg) {
+  opacity: 0.28;
+  transition: opacity 0.3s ease;
 }

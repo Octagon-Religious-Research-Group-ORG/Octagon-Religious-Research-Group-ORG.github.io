@@ -9,6 +9,8 @@
   var LOG = ROOT + "/changelog-astro-public";
   var SITE = "https://orgspirituality.org";
   var TELEGRAM = "https://t.me/+ccL8NUffhuU0ZGJh"; // the group chat orgspirituality.org/community links to
+  var LAB = "https://drasticstatic.github.io/O-R-G-astro-public/"; // Christopher's drasticstatic ORG lab
+  var DAPP = "https://drasticstatic.github.io/O-R-G-dapp-public-preview/";
   // The octagon mark's eight wedge colors, clockwise from the top edge.
   var WEDGES = ["#5a43f0", "#9a4dff", "#d04ce8", "#e65aa8", "#f29a3a", "#e4d548", "#6fd84a", "#3ccfe0"];
 
@@ -38,7 +40,7 @@
     modes: [
       { id: "night", name: "Night Sanctuary", note: "Candle-lit indigo, warm gold, and aurora light.", swatch: ["#100e1c", "#e9be72"], dark: true },
       { id: "prism", name: "Prism Light", note: "Morning light through a prism, soft and bright.", swatch: ["#f5f3fa", "#6b4fa0"] },
-      { id: "stone", name: "Stone & Lapis", note: "Temple stone veined with lapis and gold.", swatch: ["#ecebe6", "#22408a"] },
+      { id: "stone", name: "Stone & Lapis", note: "Temple stone veined with lapis and gold.", swatch: ["#ecebe6", "#22408a"], calm: true },
       {
         id: "day",
         name: "Follow the day",
@@ -53,6 +55,14 @@
       },
     ],
     defaultMode: "night",
+
+    // Reading mode: one tap for Stone & Lapis (ORG's calmest light), still ink, more contrast and no
+    // cursor effects; another tap brings back what the visitor had.
+    reading: { light: "stone" },
+
+    // "What's new since your last visit": the AstroLog's latest.json lists its newest entries,
+    // write-ups and ledger items (same origin for the portal, cross-origin for the lab).
+    news: { sources: [LOG + "/latest.json"] },
 
     // ORG's motion styles. The cursor trail runs through the octagon's eight colors: faint on Gentle,
     // brighter on Vivid, where it also scatters little octagons. Cursor effects can be switched off
@@ -112,6 +122,12 @@
         href: LOG + "/library",
         label: "Open the library",
       },
+      ledger: {
+        name: "The ledger",
+        text: "Every public change to ORG's code, in plain words: grouped by day and by kind, credited to whoever made it, and linked to the change itself. For anyone who'd rather not open GitHub. It refreshes every day.",
+        href: LOG + "/ledger",
+        label: "Open the ledger",
+      },
     },
 
     sites: {
@@ -127,7 +143,7 @@
 
     guide: {
       light: {
-        text: "ORG's members are voting on three proposed looks for the website, drawn up by Renan Teixeira. Until they decide, every ORG page offers all three, and your choice follows you from page to page.",
+        text: 'Every ORG page offers three lights. They began as Renan Teixeira\'s design proposal for orgspirituality.org, the spark for these new builds, and they live on here as lights you can choose. Your choice follows you from page to page. <a href="' + LOG + '/three-directions">Their story</a>.',
       },
       motion: {
         text: "Behind each page is marbled ink that moves with your pointer. Choose how much it moves, and whether you'd like more contrast for reading.",
@@ -141,6 +157,7 @@
 
     words: {
       enter: "Enter ORG",
+      readingNote: "One tap for the calmest page: Stone & Lapis, the ink at rest, more contrast, and no cursor trail. Tap again to go back to how you had it.",
       cursorNote: "A trail of the octagon's colors behind your pointer, and ink that stirs as you move. Switch it off if you'd rather not.",
       pause: "Pause the ink",
       play: "Let the ink move",
@@ -164,8 +181,13 @@
         { t: "ORG's Telegram group", k: "community", i: "telegram-logo", h: TELEGRAM, x: "chat talk community members" },
         { t: "ORG on GitHub", k: "link", i: "github-logo", h: "https://github.com/Octagon-Religious-Research-Group-ORG", x: "organization code repositories" },
         { t: "Brand assets and guidelines", k: "link", i: "seal-check", h: "https://github.com/Octagon-Religious-Research-Group-ORG/brand-assets", x: "logo octagon mark favicon" },
-        { t: "Design directions: the three proposed looks", k: "proposal", i: "compass-tool", h: "https://org-new-look.netlify.app/", x: "renan night sanctuary prism light stone lapis vote" },
-        { t: "drasticstatic ORG lab", k: "Christopher's lab", i: "flask", h: "https://drasticstatic.github.io/O-R-G-astro-public/", x: "dapp preview portfolio previews christopher" },
+        { t: "Three directions, living together", k: "history", i: "compass-tool", h: LOG + "/three-directions", x: "renan design directions night sanctuary prism light stone lapis proposal history credit" },
+        { t: "Help decide what comes next", k: "feedback", i: "chats-circle", h: LOG + "/three-directions#what-comes-next", x: "feedback merge main site web3 new site opinion say" },
+        { t: "The ledger: every public change", k: "AstroLog", i: "scroll", h: LOG + "/ledger", pin: true, x: "commits github history code record plain words" },
+        { t: "drasticstatic ORG lab", k: "Christopher's lab", i: "flask", h: LAB, x: "dapp preview portfolio previews christopher" },
+        { t: "The lab's changelog", k: "Christopher's lab", i: "clock-counter-clockwise", h: LAB + "changelog/", x: "lab history dapp" },
+        { t: "O-R-G dApp preview", k: "Christopher's lab", i: "cube", h: DAPP, x: "web3 wallet donation preview" },
+        { t: "ORG's organization profile", k: "link", i: "identification-card", h: "https://github.com/Octagon-Religious-Research-Group-ORG", x: "profile readme github" },
       ],
     },
   };
