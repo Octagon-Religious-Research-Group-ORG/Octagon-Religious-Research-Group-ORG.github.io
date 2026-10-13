@@ -10,26 +10,35 @@
        loop back here. -->
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="canonical" href="https://octagon-religious-research-group-org.github.io/404.html" />
+  <meta property="og:site_name" content="ORG on GitHub" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://octagon-religious-research-group-org.github.io/404.html" />
   <meta property="og:title" content="Page not found: ORG" />
+  <meta property="og:description" content="This address doesn't lead to a page. The way back to ORG is below." />
   <meta property="og:image" content="https://octagon-religious-research-group-org.github.io/social-card.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Octagon Religious-Research Group: Where science and spirituality meet. ORG's octagon over marbled ink." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Page not found: ORG" />
+  <meta name="twitter:description" content="This address doesn't lead to a page. The way back to ORG is below." />
+  <meta name="twitter:image" content="https://octagon-religious-research-group-org.github.io/social-card.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..600,0..100,0..1&family=Manrope:wght@400;600;700&family=Newsreader:opsz,wght@6..72,400..600&family=Hanken+Grotesk:wght@400;600;700&family=Marcellus&family=Literata:opsz,wght@7..72,400..600&display=swap" />
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
-  <!-- The arrival kit gives this page the visitor's light and "/" search. No first-visit splash on
-       a wrong turn. -->
+  <!-- The arrival kit (v1.2) gives this page the visitor's light, the navbar and "/" search, and
+       site.css the header, footer and dock. No first-visit splash on a wrong turn. -->
   <link rel="stylesheet" href="/arrival/arrival.css" />
   <link rel="stylesheet" href="/arrival/org.css" />
+  <link rel="stylesheet" href="/site.css" />
   <script src="/arrival/org.js"></script>
   <script src="/arrival/arrival.js"></script>
   <style>
-    *, *::before, *::after { box-sizing: border-box; }
-    body {
-      margin: 0; min-height: 100vh; display: grid; place-items: center; padding: 2.5rem 1.25rem;
-      font-family: var(--font-body); color: var(--foreground); line-height: 1.6;
-      background: radial-gradient(60% 55% at 50% 30%, var(--glow), var(--background) 70%) var(--background);
-    }
-    main { width: 100%; max-width: 32rem; text-align: center; }
+    body { background: radial-gradient(60% 55% at 50% 30%, var(--glow), var(--background) 70%) var(--background) fixed; }
+    main { width: 100%; max-width: 32rem; margin: 0 auto; padding: 3rem 1.25rem 1rem; text-align: center; }
     main > img { width: 96px; height: 96px; outline: 1px solid color-mix(in srgb, var(--accent) 55%, transparent); outline-offset: 12px; margin: 12px 0 2rem; }
     h1 { font-family: var(--font-heading); font-variation-settings: var(--heading-settings); font-weight: 400; color: var(--heading); font-size: clamp(1.9rem, 6vw, 2.6rem); line-height: 1.12; margin: 0 0 0.75rem; text-wrap: balance; }
     main > p { margin: 0 0 1.75rem; color: var(--muted); }
@@ -57,7 +66,16 @@
   </style>
 </head>
 <body>
-  <main>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- One row at every width: the brand, the kit's navbar and tools. Every link absolute. -->
+  <header class="topbar">
+    <a class="topbar-brand" href="https://octagon-religious-research-group-org.github.io/" aria-label="ORG on GitHub, home"><img src="https://octagon-religious-research-group-org.github.io/apple-touch-icon.png" alt="" width="28" height="28" /><span class="arr-brand-text">ORG</span></a>
+    <arrival-nav></arrival-nav>
+    <arrival-controls></arrival-controls>
+  </header>
+
+  <main id="main">
     <img src="/logo.png" alt="The ORG octagon" width="96" height="96" />
     <h1>This address doesn't lead to a page.</h1>
     <p>The link may be old, or the page hasn't been built yet. Every way below leads back.</p>
@@ -68,10 +86,27 @@
       <li><a href="https://octagon-religious-research-group-org.github.io/changelog-astro-public/changelog"><i class="ph ph-clock-counter-clockwise" aria-hidden="true"></i>Changelog</a></li>
       <li><a href="https://octagon-religious-research-group-org.github.io/changelog-astro-public/library"><i class="ph ph-books" aria-hidden="true"></i>Library</a></li>
       <li><a href="https://octagon-religious-research-group-org.github.io/changelog-astro-public/ledger"><i class="ph ph-scroll" aria-hidden="true"></i>Ledger</a></li>
+      <li><a href="https://octagon-religious-research-group-org.github.io/map/"><i class="ph ph-map-trifold" aria-hidden="true"></i>The map: every place, with pictures</a></li>
       <li><a href="https://drasticstatic.github.io/O-R-G-astro-public/"><i class="ph ph-flask" aria-hidden="true"></i>The drasticstatic ORG lab</a></li>
       <li><a href="https://github.com/Octagon-Religious-Research-Group-ORG"><i class="ph ph-github-logo" aria-hidden="true"></i>ORG on GitHub</a></li>
       <li class="arr-hint"><button type="button" data-arrival-open="search"><i class="ph ph-magnifying-glass" aria-hidden="true"></i>Search for it instead<kbd>/</kbd></button></li>
     </ul>
   </main>
+
+  <!-- Every way around, in groups (drawn by the kit from org.js: footer.groups). -->
+  <div class="page-foot"><arrival-footer></arrival-footer></div>
+
+  <footer class="foot">
+    <div>
+      <b>ORG<span class="long"> · Octagon Religious-Research Group</span></b>
+      <a href="https://octagon-religious-research-group-org.github.io/"><i class="ph ph-house-simple" aria-hidden="true"></i>Portal</a>
+      <a href="https://octagon-religious-research-group-org.github.io/changelog-astro-public/"><i class="ph ph-door-open" aria-hidden="true"></i>Porch</a>
+      <a href="https://octagon-religious-research-group-org.github.io/changelog-astro-public/changelog"><i class="ph ph-clock-counter-clockwise" aria-hidden="true"></i>Changelog</a>
+      <a href="https://octagon-religious-research-group-org.github.io/map/"><i class="ph ph-map-trifold" aria-hidden="true"></i>Map</a>
+      <a href="https://orgspirituality.org/community" data-arrival-open="community"><i class="ph ph-users-three" aria-hidden="true"></i>Community</a>
+      <a href="https://orgspirituality.org/about#contact" data-arrival-open="contact"><i class="ph ph-envelope-simple" aria-hidden="true"></i>Reach out</a>
+      <a href="https://octagon-religious-research-group-org.github.io/donate/"><i class="ph ph-heart" aria-hidden="true"></i>Donate</a>
+    </div>
+  </footer>
 </body>
 </html>

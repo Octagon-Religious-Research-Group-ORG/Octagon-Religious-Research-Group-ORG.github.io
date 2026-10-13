@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Octagon Religious-Research Group (ORG)</title>
-  <meta name="description" content="Octagon Religious-Research Group. Where science and spirituality meet. Nine doors into orgspirituality.org, and ORG's changelog, library and ledger." />
+  <meta name="description" content="Octagon Religious-Research Group. Where science and spirituality meet. Nine doors into orgspirituality.org, ORG's changelog, library and ledger, a map of everything, and ways to give." />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <!-- Link previews (Telegram, iMessage, Slack, Discord…): every URL absolute, a real 1200×630 JPEG. -->
@@ -28,36 +28,21 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..600,0..100,0..1&family=Manrope:wght@400;600;700&family=Newsreader:opsz,wght@6..72,400..600&family=Hanken+Grotesk:wght@400;600;700&family=Marcellus&family=Literata:opsz,wght@7..72,400..600&display=swap" />
   <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
-  <!-- ORG's arrival kit: one stylesheet + script shared with the AstroLog and the lab, served from
-       /arrival/ on this site. arrival.js applies the visitor's light, motion and contrast before
-       first paint, so it loads here in <head>. See arrival/arrival.js for what it provides. -->
+  <!-- ORG's arrival kit (v1.2): one stylesheet + script shared with the AstroLog, the lab and the
+       dApp preview, served from /arrival/ on this site. arrival.js applies the visitor's light,
+       motion, contrast, text size and cursor choice before first paint, and draws the navbar, footer
+       and windows from org.js, so it loads here in <head>. site.css is this portal's page chrome
+       (the ink field, header, footer and dock). -->
   <link rel="stylesheet" href="/arrival/arrival.css" />
   <link rel="stylesheet" href="/arrival/org.css" />
+  <link rel="stylesheet" href="/site.css" />
   <script src="/arrival/org.js"></script>
   <script src="/arrival/arrival.js"></script>
   <style>
-    /* Colors, fonts and the three lights come from /arrival/org.css, shared with the AstroLog. */
-    *, *::before, *::after { box-sizing: border-box; }
-    html { background: var(--background); }
-    body {
-      margin: 0; min-height: 100vh; color: var(--foreground); background: var(--background); font-family: var(--font-body);
-      font-size: 1.0625rem; line-height: 1.6; padding-bottom: 4.5rem; -webkit-font-smoothing: antialiased;
-    }
-    a { color: var(--accent); text-underline-offset: 0.18em; }
-    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
-
-    .field { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
-    .marble { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
-    .marble[data-fallback="true"] { background: radial-gradient(60% 55% at 50% 30%, var(--glow), var(--background) 70%); }
-    .scrim { position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 0, transparent 30vh, var(--scrim) 62vh); }
-
-    .bar {
-      position: relative; z-index: 2; display: flex; justify-content: flex-end; align-items: center;
-      gap: 0.6rem; max-width: 64rem; margin: 0 auto; padding: 1rem 1.25rem;
-    }
-
-    main { position: relative; z-index: 1; max-width: 46rem; margin: 0 auto; padding: 0 1.25rem; }
-    .hero { display: grid; justify-items: center; text-align: center; gap: 0.9rem; padding: 1rem 0 3.5rem; }
+    /* Colors, fonts and the three lights come from /arrival/org.css, shared with the AstroLog; the
+       ink field, header, footer and dock from /site.css. This block is the home page only. */
+    main { max-width: 46rem; margin: 0 auto; padding: 0 1.25rem; }
+    .hero { display: grid; justify-items: center; text-align: center; gap: 0.9rem; padding: 2rem 0 3.5rem; }
     .mark { width: min(260px, 64vw); height: auto; }
     .frame { stroke: var(--frame); }
     .halo { stroke: var(--halo); opacity: .7; }
@@ -67,10 +52,7 @@
     :root:not([data-motion="still"]) .pulse { animation: pulse 5s ease-in-out infinite alternate; }
     @keyframes spin { to { transform: rotate(360deg); } }
     @keyframes pulse { from { opacity: .6; } to { opacity: 1; } }
-    h1, h2 {
-      font-family: var(--font-heading); font-variation-settings: var(--heading-settings); font-weight: 400;
-      color: var(--heading); text-wrap: balance; margin: 0; letter-spacing: -0.01em;
-    }
+    h1, h2 { margin: 0; }
     h1 { font-size: clamp(2.1rem, 6.5vw, 3.2rem); line-height: 1.08; margin-top: 0.4rem; }
     .tagline { margin: 0; color: var(--muted); font-size: 1.15rem; }
     .about { margin: 0.4rem 0 0; max-width: 33rem; }
@@ -128,27 +110,7 @@
     .rows a:hover strong { color: var(--accent); }
     .rows small { display: block; color: var(--muted); font-size: 0.92rem; }
 
-    /* The dock: one row, swipeable on phones rather than wrapping into the bottom of the screen. */
-    .foot {
-      position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; padding: 0.6rem 1.25rem; font-size: 0.82rem;
-      color: var(--muted); background: color-mix(in srgb, var(--background) 86%, transparent);
-      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-    }
-    .foot::before {
-      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      background: linear-gradient(to right, var(--perf) 0 12px, transparent 0) 0 0 / 21px 3px repeat-x;
-    }
-    .foot div {
-      max-width: 64rem; margin: 0 auto; display: flex; justify-content: safe center; gap: 0.25rem 1.1rem;
-      overflow-x: auto; scrollbar-width: none; white-space: nowrap;
-    }
-    .foot div::-webkit-scrollbar { display: none; }
-    .foot a, .foot b { flex: none; }
-    .foot a { display: inline-flex; align-items: center; gap: 0.3rem; color: var(--muted); text-decoration: none; }
-    .foot a:hover { color: var(--accent); }
-    .foot b { color: var(--heading); }
     @media (max-width: 520px) {
-      .foot .long { display: none; }
       .sheet9 a { padding: 0.55rem 0.5rem 0.6rem; }
       .sheet9 span { font-size: 0.85rem; }
     }
@@ -157,12 +119,17 @@
 <body>
   <div class="field" aria-hidden="true"><canvas class="marble" id="marble"></canvas><div class="scrim"></div></div>
 
-  <div class="bar">
-    <!-- Search, the three lights + motion, and the light & motion drawer (arrival kit). -->
-    <arrival-controls></arrival-controls>
-  </div>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <main>
+  <!-- One row at every width: the brand, the kit's navbar (it folds into "More", then a Menu
+       button, rather than wrapping), and the kit's tools. -->
+  <header class="topbar">
+    <a class="topbar-brand" href="/" aria-label="ORG on GitHub, home"><img src="/apple-touch-icon.png" alt="" width="28" height="28" /><span class="arr-brand-text">ORG</span></a>
+    <arrival-nav></arrival-nav>
+    <arrival-controls></arrival-controls>
+  </header>
+
+  <main id="main">
     <section class="hero">
     <svg class="mark" viewBox="0 0 300 300" role="img" aria-label="The ORG octagon">
       <defs><radialGradient id="w0" cx="150" cy="150" r="132" gradientUnits="userSpaceOnUse"><stop offset="0.25" stop-color="#fff" stop-opacity="0.95"/><stop offset="0.55" stop-color="#5a43f0"/><stop offset="1" stop-color="#5a43f0" stop-opacity="0.85"/></radialGradient><radialGradient id="w1" cx="150" cy="150" r="132" gradientUnits="userSpaceOnUse"><stop offset="0.25" stop-color="#fff" stop-opacity="0.95"/><stop offset="0.55" stop-color="#9a4dff"/><stop offset="1" stop-color="#9a4dff" stop-opacity="0.85"/></radialGradient><radialGradient id="w2" cx="150" cy="150" r="132" gradientUnits="userSpaceOnUse"><stop offset="0.25" stop-color="#fff" stop-opacity="0.95"/><stop offset="0.55" stop-color="#d04ce8"/><stop offset="1" stop-color="#d04ce8" stop-opacity="0.85"/></radialGradient><radialGradient id="w3" cx="150" cy="150" r="132" gradientUnits="userSpaceOnUse"><stop offset="0.25" stop-color="#fff" stop-opacity="0.95"/><stop offset="0.55" stop-color="#e65aa8"/><stop offset="1" stop-color="#e65aa8" stop-opacity="0.85"/></radialGradient><radialGradient id="w4" cx="150" cy="150" r="132" gradientUnits="userSpaceOnUse"><stop offset="0.25" stop-color="#fff" stop-opacity="0.95"/><stop offset="0.55" stop-color="#f29a3a"/><stop offset="1" stop-color="#f29a3a" stop-opacity="0.85"/></radialGradient><radialGradient id="w5" cx="150" cy="150" r="132" gradientUnits="userSpaceOnUse"><stop offset="0.25" stop-color="#fff" stop-opacity="0.95"/><stop offset="0.55" stop-color="#e4d548"/><stop offset="1" stop-color="#e4d548" stop-opacity="0.85"/></radialGradient><radialGradient id="w6" cx="150" cy="150" r="132" gradientUnits="userSpaceOnUse"><stop offset="0.25" stop-color="#fff" stop-opacity="0.95"/><stop offset="0.55" stop-color="#6fd84a"/><stop offset="1" stop-color="#6fd84a" stop-opacity="0.85"/></radialGradient><radialGradient id="w7" cx="150" cy="150" r="132" gradientUnits="userSpaceOnUse"><stop offset="0.25" stop-color="#fff" stop-opacity="0.95"/><stop offset="0.55" stop-color="#3ccfe0"/><stop offset="1" stop-color="#3ccfe0" stop-opacity="0.85"/></radialGradient><radialGradient id="core" cx="150" cy="150" r="40" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff"/><stop offset="0.5" stop-color="#fff" stop-opacity="0.95"/><stop offset="1" stop-color="var(--halo)" stop-opacity="0"/></radialGradient><clipPath id="oct"><polygon points="99.5,28.0 200.5,28.0 272.0,99.5 272.0,200.5 200.5,272.0 99.5,272.0 28.0,200.5 28.0,99.5"/></clipPath><filter id="blur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="8"/></filter></defs>
@@ -203,23 +170,34 @@
         <li><a href="/changelog-astro-public/"><i class="ph ph-door-open" aria-hidden="true"></i><span><strong>The AstroLog porch</strong><small>The latest changes, and who made them.</small></span></a></li>
         <li><a href="/changelog-astro-public/changelog"><i class="ph ph-clock-counter-clockwise" aria-hidden="true"></i><span><strong>Changelog</strong><small>Every notable change, newest first.</small></span></a></li>
         <li><a href="/changelog-astro-public/library"><i class="ph ph-books" aria-hidden="true"></i><span><strong>Library</strong><small>Longer write-ups on how the sites are built.</small></span></a></li>
-        <li><a href="/changelog-astro-public/map"><i class="ph ph-tree-structure" aria-hidden="true"></i><span><strong>Map</strong><small>How the code, hosting, and previews connect.</small></span></a></li>
+        <li><a href="/map/"><i class="ph ph-map-trifold" aria-hidden="true"></i><span><strong>Map</strong><small>Every place these pages lead, each with a picture, and how the code, hosting and previews connect.</small></span></a></li>
         <li><a href="/changelog-astro-public/ledger"><i class="ph ph-scroll" aria-hidden="true"></i><span><strong>Ledger</strong><small>Every public change to ORG's code, in plain words, refreshed daily.</small></span></a></li>
       </ul>
     </section>
 
     <section class="section" aria-labelledby="people">
       <h2 id="people">Who made the changes</h2>
-      <p class="section-intro">Named the way ORG's own profile names them. Every AstroLog entry credits whoever did the work.</p>
+      <p class="section-intro">By first name and last initial, the way ORG's own profile names them. Every AstroLog entry credits whoever did the work.</p>
       <arrival-people></arrival-people>
+    </section>
+
+    <section class="section" aria-labelledby="involved">
+      <h2 id="involved">Get involved</h2>
+      <p class="section-intro">ORG lives on Telegram. Every way in, and every way to reach the team, is one tap away.</p>
+      <ul class="rows">
+        <li><a href="https://orgspirituality.org/community" data-arrival-open="community"><i class="ph ph-users-three" aria-hidden="true"></i><span><strong>Community</strong><small>Join the ORG group on Telegram, hear about events and ceremonies, or ask Tripp first.</small></span></a></li>
+        <li><a href="https://orgspirituality.org/about#contact" data-arrival-open="contact"><i class="ph ph-envelope-simple" aria-hidden="true"></i><span><strong>Reach out</strong><small>ORG's addresses, Tripp on Telegram or Signal, and ORG's contacts on GitHub, in one place.</small></span></a></li>
+        <li><a href="/donate/"><i class="ph ph-heart" aria-hidden="true"></i><span><strong>Donate</strong><small>ORG's own giving page, a thank-you list for those who'd like one, and giving with crypto, coming soon.</small></span></a></li>
+      </ul>
     </section>
 
     <section class="section" aria-labelledby="next">
       <h2 id="next">What comes next</h2>
-      <p class="section-intro">ORG's new builds started with Renan Teixeira's design proposal. Its three looks live on as the lights you can choose on every page here.</p>
+      <p class="section-intro">ORG's new builds started with Renan T's design proposal. Its three looks live on as the lights you can choose on every page here.</p>
       <ul class="rows">
         <li><a href="/changelog-astro-public/three-directions#what-comes-next"><i class="ph ph-chats-circle" aria-hidden="true"></i><span><strong>Help decide what comes next</strong><small>How should these new builds come together with orgspirituality.org? The likely direction is a new, web3-ready site rather than adding web3 to the current one. Tell ORG what you think.</small></span></a></li>
-        <li><a href="/changelog-astro-public/three-directions"><i class="ph ph-compass-tool" aria-hidden="true"></i><span><strong>Three directions, living together</strong><small>Renan's proposal, kept as history and credited at Tripp's request.</small></span></a></li>
+        <li><a href="/changelog-astro-public/roadmap"><i class="ph ph-path" aria-hidden="true"></i><span><strong>Roadmap</strong><small>Where these pages are headed, without dates, and what keeps them running.</small></span></a></li>
+        <li><a href="/changelog-astro-public/three-directions"><i class="ph ph-compass-tool" aria-hidden="true"></i><span><strong>Three directions, living together</strong><small>Renan T's proposal, kept as history and credited at Tripp's request.</small></span></a></li>
       </ul>
     </section>
 
@@ -234,19 +212,21 @@
     </section>
   </main>
 
+  <!-- Every way around, in groups (drawn by the kit from org.js: footer.groups). -->
+  <div class="page-foot"><arrival-footer></arrival-footer></div>
+
   <footer class="foot">
     <div>
       <b>ORG<span class="long"> · Octagon Religious-Research Group</span></b>
-      <a href="/"><i class="ph ph-house" aria-hidden="true"></i>Entry portal</a>
       <a href="/changelog-astro-public/"><i class="ph ph-door-open" aria-hidden="true"></i>Porch</a>
       <a href="/changelog-astro-public/changelog"><i class="ph ph-clock-counter-clockwise" aria-hidden="true"></i>Changelog</a>
       <a href="/changelog-astro-public/library"><i class="ph ph-books" aria-hidden="true"></i>Library</a>
       <a href="/changelog-astro-public/ledger"><i class="ph ph-scroll" aria-hidden="true"></i>Ledger</a>
-      <a href="/changelog-astro-public/map"><i class="ph ph-tree-structure" aria-hidden="true"></i>Map</a>
-      <a href="https://drasticstatic.github.io/O-R-G-astro-public/"><i class="ph ph-flask" aria-hidden="true"></i>The lab</a>
-      <a href="https://orgspirituality.org"><i class="ph ph-globe-hemisphere-west" aria-hidden="true"></i>orgspirituality.org</a>
-      <a href="#welcome" data-arrival-open="guide"><i class="ph ph-compass" aria-hidden="true"></i>Welcome guide</a>
-      <a href="https://github.com/Octagon-Religious-Research-Group-ORG/Octagon-Religious-Research-Group-ORG.github.io"><i class="ph ph-github-logo" aria-hidden="true"></i>Source</a>
+      <a href="/map/"><i class="ph ph-map-trifold" aria-hidden="true"></i>Map</a>
+      <a href="https://orgspirituality.org/community" data-arrival-open="community"><i class="ph ph-users-three" aria-hidden="true"></i>Community</a>
+      <a href="https://orgspirituality.org/about#contact" data-arrival-open="contact"><i class="ph ph-envelope-simple" aria-hidden="true"></i>Reach out</a>
+      <a href="/donate/"><i class="ph ph-heart" aria-hidden="true"></i>Donate</a>
+      <a href="#welcome" data-arrival-open="guide"><i class="ph ph-signpost" aria-hidden="true"></i>Welcome<span class="long"> guide</span></a>
     </div>
   </footer>
 

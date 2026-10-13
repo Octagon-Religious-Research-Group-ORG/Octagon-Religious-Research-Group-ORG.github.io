@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en" data-arrival-site="portal">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Map: ORG on GitHub</title>
+  <meta name="description" content="Every place ORG&#x27;s pages lead, each with a picture of where it goes: the portal, the AstroLog, the ways to get involved, ORG&#x27;s sites and the lab." />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <!-- Link previews (Telegram, iMessage, Slack, Discord…): every URL absolute, a real 1200×630 JPEG,
+       built by the AstroLog with the site's other page cards. -->
+  <link rel="canonical" href="https://octagon-religious-research-group-org.github.io/map/" />
+  <meta property="og:site_name" content="ORG on GitHub" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://octagon-religious-research-group-org.github.io/map/" />
+  <meta property="og:title" content="Map: ORG on GitHub" />
+  <meta property="og:description" content="Every place ORG&#x27;s pages lead, each with a picture of where it goes: the portal, the AstroLog, the ways to get involved, ORG&#x27;s sites and the lab." />
+  <meta property="og:image" content="https://octagon-religious-research-group-org.github.io/changelog-astro-public/og/page/map.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Map of ORG&#x27;s pages: every place, with a picture of each." />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Map: ORG on GitHub" />
+  <meta name="twitter:description" content="Every place ORG&#x27;s pages lead, each with a picture of where it goes: the portal, the AstroLog, the ways to get involved, ORG&#x27;s sites and the lab." />
+  <meta name="twitter:image" content="https://octagon-religious-research-group-org.github.io/changelog-astro-public/og/page/map.jpg" />
+  <meta name="twitter:image:alt" content="Map of ORG&#x27;s pages: every place, with a picture of each." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..600,0..100,0..1&family=Manrope:wght@400;600;700&family=Newsreader:opsz,wght@6..72,400..600&family=Hanken+Grotesk:wght@400;600;700&family=Marcellus&family=Literata:opsz,wght@7..72,400..600&display=swap" />
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <!-- ORG's arrival kit (v1.2), served from /arrival/ on this site: the visitor's light, motion,
+       contrast, text size and cursor choice before first paint, and the navbar, footer and windows
+       from org.js. site.css is this portal's page chrome. The map itself is drawn from the AstroLog's map.json, its one canonical copy. -->
+  <link rel="stylesheet" href="/arrival/arrival.css" />
+  <link rel="stylesheet" href="/arrival/org.css" />
+  <link rel="stylesheet" href="/site.css" />
+  <script src="/arrival/org.js"></script>
+  <script src="/arrival/arrival.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <div class="field quiet" aria-hidden="true"><canvas class="marble" id="marble"></canvas><div class="scrim"></div></div>
+
+  <!-- One row at every width: the brand, the kit's navbar (it folds into "More", then a Menu
+       button, rather than wrapping), and the kit's tools. -->
+  <header class="topbar">
+    <a class="topbar-brand" href="/" aria-label="ORG on GitHub, home"><img src="/apple-touch-icon.png" alt="" width="28" height="28" /><span class="arr-brand-text">ORG</span></a>
+    <arrival-nav current="map"></arrival-nav>
+    <arrival-controls></arrival-controls>
+  </header>
+
+  <main id="main" class="page">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/"><i class="ph ph-house-simple" aria-hidden="true"></i>Portal</a><span aria-hidden="true">/</span><span aria-current="page">Map</span></nav>
+    <h1>Where everything is</h1>
+    <p class="lede">Every place ORG's pages lead, each with the picture it shows when you share its link, so you can see where you're going before you go. The same map, with a diagram of how the code and hosting connect, lives in the <a href="https://octagon-religious-research-group-org.github.io/changelog-astro-public/map">AstroLog</a>.</p>
+    <!-- Drawn from the AstroLog's map.json (same origin): one copy of the map for every site. -->
+    <arrival-map src="https://octagon-religious-research-group-org.github.io/changelog-astro-public/map.json" here="portal"><noscript><p><a href="https://octagon-religious-research-group-org.github.io/changelog-astro-public/map">Open the map in the AstroLog</a>.</p></noscript></arrival-map>
+  </main>
+
+  <!-- Every way around, in groups (drawn by the kit from org.js: footer.groups). -->
+  <div class="page-foot"><arrival-footer current="map"></arrival-footer></div>
+
+  <footer class="foot">
+    <div>
+      <b>ORG<span class="long"> · Octagon Religious-Research Group</span></b>
+      <a href="/"><i class="ph ph-house-simple" aria-hidden="true"></i>Portal</a>
+      <a href="/changelog-astro-public/"><i class="ph ph-door-open" aria-hidden="true"></i>Porch</a>
+      <a href="/changelog-astro-public/changelog"><i class="ph ph-clock-counter-clockwise" aria-hidden="true"></i>Changelog</a>
+      <a href="/changelog-astro-public/ledger"><i class="ph ph-scroll" aria-hidden="true"></i>Ledger</a>
+      <a href="/map/"><i class="ph ph-map-trifold" aria-hidden="true"></i>Map</a>
+      <a href="https://orgspirituality.org/community" data-arrival-open="community"><i class="ph ph-users-three" aria-hidden="true"></i>Community</a>
+      <a href="https://orgspirituality.org/about#contact" data-arrival-open="contact"><i class="ph ph-envelope-simple" aria-hidden="true"></i>Reach out</a>
+      <a href="/donate/"><i class="ph ph-heart" aria-hidden="true"></i>Donate</a>
+      <a href="#welcome" data-arrival-open="guide"><i class="ph ph-signpost" aria-hidden="true"></i>Welcome<span class="long"> guide</span></a>
+    </div>
+  </footer>
+
+  <script src="/marble.js" defer></script>
+</body>
+</html>
