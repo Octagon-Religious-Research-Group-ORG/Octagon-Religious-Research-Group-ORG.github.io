@@ -22,7 +22,7 @@
 
 **ORG** is a member-governed spiritual and research community. Members propose beliefs and keep the
 ones most of them agree on, and together they plan octagon-shaped temples and research centers where
-spirituality and science are practiced side by side. ORG was founded by Tripp Aardema.
+spirituality and science are practiced side by side. Tripp A founded ORG.
 
 ## Enter through any door
 
@@ -72,8 +72,9 @@ new, web3-ready site rather than adding web3 onto the current one.
 | [Entry portal](https://octagon-religious-research-group-org.github.io/) | ORG's front door on GitHub: the nine doors, the latest changes, and the way into everything below. |
 | [ORG AstroLog](https://octagon-religious-research-group-org.github.io/changelog-astro-public/) | ORG's official changelog and library, in plain language, with who made each change. |
 | [Ledger](https://octagon-religious-research-group-org.github.io/changelog-astro-public/ledger) | Every public change to ORG's code, in plain words, grouped by day and by kind. Refreshed daily. |
-| [Map](https://octagon-religious-research-group-org.github.io/changelog-astro-public/map) | How ORG's code, hosting, and previews connect. |
-| [Three directions, living together](https://octagon-religious-research-group-org.github.io/changelog-astro-public/three-directions) | Renan Teixeira's design proposal, the spark for the new builds, kept as history. Its three looks live on as lights on every ORG page. |
+| [Map](https://octagon-religious-research-group-org.github.io/map/) | Every place ORG's pages lead, each with a picture, and how the code, hosting, and previews connect. |
+| [Donate](https://octagon-religious-research-group-org.github.io/donate/) | ORG's own giving page, a thank-you list for those who'd like one, and giving with crypto, coming soon. |
+| [Three directions, living together](https://octagon-religious-research-group-org.github.io/changelog-astro-public/three-directions) | Renan T's design proposal, the spark for the new builds, kept as history. Its three looks live on as lights on every ORG page. |
 | [drasticstatic ORG lab](https://drasticstatic.github.io/O-R-G-astro-public/) | Christopher's lab, where the new builds take shape, with its own [changelog](https://drasticstatic.github.io/O-R-G-astro-public/changelog/) and [ledger](https://drasticstatic.github.io/O-R-G-astro-public/ledger/). |
 | [dApp preview](https://drasticstatic.github.io/O-R-G-dapp-public-preview/) | A web3-ready preview from the lab: an octagon made of ORG's artwork, the beliefs, marbled ink you can stir, and a wallet-connect gift. |
 
@@ -96,9 +97,14 @@ press <kbd>/</kbd> to search, tap the book for reading mode, and see what's new 
 
 | | |
 | --- | --- |
-| **Tripp Aardema** | Founder. Leads ORG and much of the site's content and design. |
-| **Renan Teixeira** ([@SCDEVBrazil](https://github.com/SCDEVBrazil)) | Develops the website and drew up the design directions that started ORG's new builds. |
+| **Tripp A** | Founder. Leads ORG and much of the site's content and design. |
+| **Renan T** ([@SCDEVBrazil](https://github.com/SCDEVBrazil)) | Develops the website and drew up the design directions that started ORG's new builds. |
 | **mitch8020** ([@mitch8020](https://github.com/mitch8020)) | Built the original site and its API. |
-| **Christopher** ([@drasticstatic](https://github.com/drasticstatic)) | Looks after ORG's GitHub and builds the previews in his [lab](https://drasticstatic.github.io/O-R-G-astro-public/), with [Alfred](https://github.com/drasticstatic/anthropas-argus-alfred-public-preview). |
+| **Christopher W** ([@drasticstatic](https://github.com/drasticstatic)) | Looks after ORG's GitHub and builds the previews in his [lab](https://drasticstatic.github.io/O-R-G-astro-public/), with [Alfred](https://github.com/drasticstatic/anthropas-argus-alfred-public-preview). |
+
+## Community health
+
+- [`CONTACTS.md`](https://github.com/Octagon-Religious-Research-Group-ORG/.github/blob/main/CONTACTS.md): every way to reach ORG (its addresses, the ORG group on Telegram, and Tripp)
+- [`SOCIAL-PREVIEWS.md`](https://github.com/Octagon-Religious-Research-Group-ORG/.github/blob/main/SOCIAL-PREVIEWS.md): how to refresh link previews in Telegram, LinkedIn, Facebook and more, and which pages have their own share image
 
 <p align="center"><sub>Where science and spirituality meet.</sub></p>
