@@ -1,4 +1,4 @@
-/* ORG's arrival config, read by arrival.js (kit v1.2). Shared by every ORG page: the entry portal
+/* ORG's arrival config, read by arrival.js (kit v1.3). Shared by every ORG page: the entry portal
    (/, /donate/, /map/, the 404), the AstroLog, and (by absolute URL) the drasticstatic ORG lab and
    the O-R-G dApp preview.
 
@@ -250,6 +250,19 @@
     // (it hands off to PayPal or Venmo); /donate there is a 404. The page links ORG's pages, never a
     // payment processor directly. The dApp preview's gift page calls itself a preview on a
     // placeholder address, and is linked as exactly that. No wallet address here, ever.
+    // Give with crypto (kit v1.3, arrival/give/give.js): one Connect button in the donate page's crypto
+    // slot. The Reown project (a public client ID, shared by the fleet's portals for now) must list
+    // https://octagon-religious-research-group-org.github.io in its allowlist at dashboard.reown.com; until it does, the page
+    // calmly says wallet connect isn't switched on for this site yet. No treasury address yet, so every
+    // coin reads "Treasury address coming soon" and connecting is a labelled preview. Never put a
+    // placeholder or example address here: the page would show it. note: the org's own words, if any.
+    give: {
+      reownProjectId: "00b6a1cd528ff580f1fd845ed08b0187",
+      chains: ["mainnet"],
+      addresses: { eth: null, btc: null, sol: null },
+      note: "",
+    },
+
     donate: {
       give: [
         {
