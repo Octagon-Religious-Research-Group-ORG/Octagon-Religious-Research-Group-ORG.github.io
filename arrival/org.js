@@ -1,6 +1,6 @@
-/* ORG's arrival config, read by arrival.js (kit v1.3). Shared by every ORG page: the entry portal
-   (/, /donate/, /map/, the 404), the AstroLog, and (by absolute URL) the drasticstatic ORG lab and
-   the O-R-G dApp preview.
+/* ORG's arrival config, read by arrival.js (kit v1.4). Shared by every ORG page: the entry portal
+   (/, /donate/, /pledge/, /map/, the 404), the AstroLog, and (by absolute URL) the drasticstatic ORG
+   lab and the O-R-G dApp preview.
 
    Every fact here comes from ORG's own materials: orgspirituality.org (About, Community, Offerings
    and its offering policy), the organization's .github profile (CONTACTS.md included), and
@@ -11,9 +11,21 @@
   var ROOT = "https://octagon-religious-research-group-org.github.io";
   var LOG = ROOT + "/changelog-astro-public";
   var SITE = "https://orgspirituality.org";
-  // The Telegram group chat orgspirituality.org/community links to ("for more information and
-  // updates"). Telegram titles it "ORG Events and Ceremonies", shared with Entheo Community.
+  // ORG on Telegram (Tripp OK'd all four for these pages, 2026-10-22). Titles and descriptions are
+  // Telegram's own, as each link previews.
+  //   ORG (Public): "an unrestricted public chat", open to anyone.
+  var PUBLIC_CHAT = "https://t.me/ORG_Spirituality";
+  //   ORG Events and Ceremonies: "a collaboration between ORG and Entheo Community", the group chat
+  //   orgspirituality.org/community links to ("for more information and updates"). Kept as it was.
   var TELEGRAM = "https://t.me/+ccL8NUffhuU0ZGJh";
+  //   Private groups, admitted by hand: Tripp approves a request once that person's membership form
+  //   (or, for EaMs, their entheogen safety training form) is complete, so it's fine to ask early.
+  var VOTING = "https://t.me/+1hlK0bCSBzwyOTkx"; // ORG (Voting): confirmed members vote on all decisions
+  var EAMS = "https://t.me/+9gpCph_VVqUwN2Zh"; // ORG EaMs (Entheo-approved Members)
+  // ORG's own documents, shared as iCloud Pages links: the public membership form, and ORG's overview
+  // (the "ORG White Paper(s) Home Page" the public chat's description links).
+  var MEMBERSHIP = "https://www.icloud.com/pages/051s7hMIDB_LNvP2CEYUZfkew#Membership";
+  var OVERVIEW = "https://www.icloud.com/pages/0438mnIFrZCE0vC6kuGrVjfBQ#ORG";
   // Tripp, as orgspirituality.org's About page lists him under Contact Us.
   var TRIPP = "https://t.me/Tripp_ORG";
   var CONTACTS = "https://github.com/Octagon-Religious-Research-Group-ORG/.github/blob/main/CONTACTS.md";
@@ -125,9 +137,10 @@
           icon: "hand-heart",
           priority: 3,
           items: [
-            { id: "community", label: "Community", icon: "users-three", href: SITE + "/community", open: "community", note: "Where ORG's members talk, on Telegram" },
+            { id: "community", label: "Community", icon: "users-three", href: SITE + "/community", open: "community", note: "ORG's chats on Telegram: public, events, and members' groups" },
             { id: "contact", label: "Reach out", icon: "envelope-simple", href: SITE + "/about#contact", open: "contact", note: "Every way to reach ORG" },
             { id: "donate", label: "Donate", icon: "heart", href: ROOT + "/donate/", note: "Ways to give, and thanks by name" },
+            { id: "pledge", label: "Pledge", icon: "handshake", href: ROOT + "/pledge/", note: "Sign a pledge of support: free, nothing sent" },
           ],
         },
         {
@@ -148,6 +161,7 @@
           icon: "info",
           priority: 1,
           items: [
+            { id: "overview", label: "ORG overview (document)", icon: "file-text", href: OVERVIEW, note: "ORG's own overview, on iCloud" },
             { id: "roadmap", label: "Roadmap", icon: "path", href: LOG + "/roadmap", note: "Where these pages are headed" },
             { id: "sustainability", label: "Sustainability", icon: "plant", href: LOG + "/sustainability", note: "What it takes to keep them running" },
             { id: "github", label: "GitHub", icon: "github-logo", href: "https://github.com/Octagon-Religious-Research-Group-ORG", note: "The organization and its code" },
@@ -160,11 +174,11 @@
       label: "ORG, all the ways around",
       groups: [
         { label: "Explore", icon: "compass", items: ["portal", "porch", "changelog", "library", "ledger", "map"] },
-        { label: "Get involved", icon: "hand-heart", items: ["community", "contact", "donate", { id: "guide", label: "Welcome guide", icon: "signpost", href: "#welcome", open: "guide" }] },
-        { label: "ORG's sites", icon: "globe-hemisphere-west", items: ["home", "directions", "lab", "dapp"] },
+        { label: "Get involved", icon: "hand-heart", items: ["community", "contact", "donate", "pledge", { id: "guide", label: "Welcome guide", icon: "signpost", href: "#welcome", open: "guide" }] },
+        { label: "ORG's sites", icon: "globe-hemisphere-west", items: ["home", "overview", "directions", "lab", "dapp"] },
         { label: "About this build", icon: "wrench", items: ["roadmap", "sustainability", "github", "brand", { id: "contacts", label: "CONTACTS.md", icon: "address-book", href: CONTACTS }, { id: "source", label: "AstroLog source", icon: "code", href: "https://github.com/Octagon-Religious-Research-Group-ORG/changelog-astro-public" }] },
       ],
-      note: "ORG's name and octagon mark belong to ORG; the brand assets explain how to use them.",
+      note: 'Code here is MIT licensed and the words are CC BY-SA 4.0. ORG\'s name and octagon mark belong to ORG and aren\'t covered by either: see <a href="https://github.com/Octagon-Religious-Research-Group-ORG/.github/blob/main/TRADEMARKS.md">TRADEMARKS.md</a>, and the brand assets for how to use them.',
     },
 
     // ── kit 1.2: one window for every way to reach ORG ─────────────────────────────────────────
@@ -191,22 +205,23 @@
         {
           kind: "form",
           label: "An ORG help desk",
-          placeholder: "A help desk for questions and website feedback, with Telegram built in, is planned. Until it opens, the addresses above or the ORG group on Telegram reach the team.",
+          placeholder: "A help desk for questions and website feedback, with Telegram built in, is planned. Until it opens, the addresses above or ORG's public chat on Telegram reach the team.",
         },
       ],
     },
 
-    // ── where the community talks: Telegram (ORG's own setting), and a sneak peek at a network of
-    //    the members' own, paired with a DAO. The v1.0 keys (name … more) drive the guide's step. ──
+    // ── where the community talks: ORG's chats on Telegram (Tripp OK'd all of them, 2026-10-22),
+    //    and a sneak peek at a network of the members' own, paired with a DAO. The v1.0 keys (name …
+    //    more) drive the guide's step. No member counts, ever. ──────────────────────────────────
     community: {
       name: "Telegram",
       icon: "telegram-logo",
-      href: TELEGRAM,
+      href: PUBLIC_CHAT,
       label: "See every way in",
       title: "Where we gather",
       eyebrow: "Community",
-      text: "ORG's members talk in a Telegram group chat. The Community page on orgspirituality.org invites everyone there for more information and updates.",
-      intro: "ORG lives on Telegram: its group chat is where members, and people thinking of joining, connect and hear about meetings, events and ceremonies.",
+      text: "ORG gathers on Telegram: a public chat open to anyone, a group for events and ceremonies, and two private groups for members.",
+      intro: "ORG lives on Telegram. Anyone can join the public chat and the events group. The two members' groups are private, and it's fine to ask: Tripp lets each person in once their form is done.",
       more: [
         'Prefer to ask one person first? ORG\'s About page lists Tripp on Telegram as <a href="' + TRIPP + '">@Tripp_ORG</a>.',
       ],
@@ -214,21 +229,38 @@
       intercept: false,
       platforms: [
         {
-          id: "telegram",
+          id: "public",
           kind: "telegram",
-          name: "Events and ceremonies",
-          text: "ORG's Telegram group chat, a collaboration with Entheo Community. orgspirituality.org sends people here for news of the monthly meditation ceremony, and it's where most members connect.",
-          public: { href: SITE + "/community", label: "See what's on", note: "The meetings, events and ceremonies, on orgspirituality.org." },
-          join: { href: TELEGRAM, label: "Join the ORG group", note: "An invite link to the group chat on Telegram." },
+          name: "ORG (Public)",
+          text: "ORG's public chat, @ORG_Spirituality, open to anyone: members, and anyone curious about ORG. In its own words, it's “an unrestricted public chat”, so what people say there doesn't always reflect ORG's views.",
+          public: { href: OVERVIEW, label: "ORG overview (document)", note: "ORG's own overview, which the chat links too." },
+          join: { href: PUBLIC_CHAT, label: "Join @ORG_Spirituality", note: "Open to everyone." },
         },
         {
-          id: "tripp",
+          id: "telegram",
           kind: "telegram",
-          icon: "chat-circle-text",
-          name: "Ask Tripp first",
-          text: "ORG's Community page asks people who'd like to join to message Tripp, its founder, with their preferred name.",
-          public: { href: TRIPP, label: "Message @Tripp_ORG", note: "On Telegram." },
-          join: { href: SITE + "/join", label: "Become a member", note: "Create a member account on orgspirituality.org." },
+          name: "ORG Events and Ceremonies",
+          text: "A collaboration between ORG and Entheo Community. orgspirituality.org's Community page sends people here for news of the monthly meditation ceremony.",
+          public: { href: SITE + "/community", label: "See what's on", note: "The meetings, events and ceremonies, on orgspirituality.org." },
+          join: { href: TELEGRAM, label: "Join Events and Ceremonies", note: "An invite link to the group on Telegram." },
+        },
+        {
+          id: "voting",
+          kind: "telegram",
+          icon: "lock-simple",
+          name: "ORG (Voting)",
+          text: "Private: for confirmed ORG members, to vote on all of ORG's decisions. Tripp approves each request by hand once that person's membership form is complete, so it's fine to ask now; your request waits until then.",
+          public: { href: MEMBERSHIP, label: "Membership form", note: "ORG's public membership form." },
+          join: { href: VOTING, label: "Ask to join", note: "Private: Tripp approves each request." },
+        },
+        {
+          id: "eams",
+          kind: "telegram",
+          icon: "lock-simple",
+          name: "ORG EaMs (Entheo-approved Members)",
+          text: "Private: for ORG members who have completed an approved form of entheogen safety training. Tripp approves each request by hand once that person's EaM form is complete, so it's fine to ask now.",
+          public: { href: MEMBERSHIP, label: "Membership form", note: "Not a member yet? Start here." },
+          join: { href: EAMS, label: "Ask to join", note: "Private: Tripp approves each request." },
         },
       ],
       bespoke: {
@@ -300,6 +332,30 @@
       crypto: {
         text: "Giving from a crypto wallet is planned for this page, through the same wallet connection the dApp preview uses. It isn't open yet.",
       },
+      // kit 1.4: "Receipts and taxes". Only ORG's own words state a status: section III of
+      // orgspirituality.org/gifts-contributions ("Donations are tax-deductible … we chose to register
+      // as a 501(c)(3)", checked 2026-10-22), quoted and linked, never paraphrased into more. The
+      // span keeps ORG's fonts from turning "(c)" into a copyright sign.
+      tax: {
+        status: 'In ORG\'s own words, on its <a href="' + SITE + '/gifts-contributions">gifts and contributions page</a>: “we chose to register as a <span style="font-variant-ligatures: none; font-feature-settings: \'calt\' 0, \'liga\' 0, \'dlig\' 0">501(c)(3)</span>.”',
+        deductible: "That page says: “Donations are tax-deductible.” How much, if at all, depends on your own situation.",
+      },
+    },
+
+    // ── kit 1.4: the dock shows a fade and a chevron on the side with more, so a phone visitor can
+    //    tell it scrolls. ORG's docks aren't the kit's default markup: the portal's is .foot > div,
+    //    the AstroLog's .site-footer .footer-inner (the lab's and the dApp's footers wrap instead). ──
+    dock: { scroll: true, selector: ".foot > div, .site-footer .footer-inner" },
+
+    // ── kit 1.4: a pledge of support, on its own page (/pledge/). A visitor signs it with a wallet:
+    //    a message, not a transaction: free, nothing sent, nothing recorded, and no counts. It uses the
+    //    same wallet connection as /donate/ (give.reownProjectId). The words follow ORG's own: where
+    //    science and spirituality meet; a community its members govern. ───────────────────────────
+    pledge: {
+      href: ROOT + "/pledge/",
+      text: "I support the Octagon Religious-Research Group: a member-governed community where science and spirituality meet, and its work toward octagon temples and research centers where both are practiced side by side.",
+      intro: "If ORG matters to you, you can say so by signing a short pledge with a crypto wallet. It's free: no gas and no money, and for now nothing is recorded. Signing a pledge doesn't make you a member; <a href=\"" + SITE + "/join\">joining ORG</a> is its own step.",
+      note: 'A pledge isn\'t a gift and asks nothing more of you. To give as well, see <a href="' + ROOT + '/donate/">the ways to give</a>.',
     },
 
     record: {
@@ -374,7 +430,12 @@
         { t: "Legal", k: "orgspirituality.org", i: "scroll", h: SITE + "/legal", x: "church religious" },
         { t: "Future ideas", k: "orgspirituality.org", i: "lightbulb", h: SITE + "/future-ideas", x: "future" },
         { t: "Gifts and offerings", k: "orgspirituality.org", i: "gift", h: SITE + "/offerings", x: "shop offerings donate" },
-        { t: "Join the ORG group", k: "Telegram", i: "telegram-logo", h: TELEGRAM, x: "chat talk community members events ceremonies meditation" },
+        { t: "ORG (Public) chat", k: "Telegram", i: "telegram-logo", h: PUBLIC_CHAT, pin: true, x: "chat talk community public open everyone org_spirituality join" },
+        { t: "ORG Events and Ceremonies", k: "Telegram", i: "telegram-logo", h: TELEGRAM, x: "chat group community events ceremonies meditation entheo" },
+        { t: "ORG (Voting): ask to join", k: "Telegram, private", i: "lock-simple", h: VOTING, x: "members vote decisions private group approval tripp" },
+        { t: "ORG EaMs: ask to join", k: "Telegram, private", i: "lock-simple", h: EAMS, x: "entheo approved members safety training private group approval tripp eam" },
+        { t: "Membership form", k: "ORG document", i: "identification-card", h: MEMBERSHIP, x: "join member membership apply form icloud" },
+        { t: "ORG overview (document)", k: "ORG document", i: "file-text", h: OVERVIEW, pin: true, x: "overview white paper about icloud pages document" },
         { t: "Message Tripp", k: "Telegram", i: "chat-circle-text", h: TRIPP, x: "founder ask question join membership" },
         { t: "Contact Us", k: "orgspirituality.org", i: "address-book", h: SITE + "/about#contact", x: "contact reach telegram signal tripp" },
         { t: "ORG's contacts (CONTACTS.md)", k: "GitHub", i: "address-book", h: CONTACTS, x: "email addresses org webdev gmail reach out" },
