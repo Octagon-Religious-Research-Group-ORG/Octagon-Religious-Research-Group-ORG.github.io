@@ -69,11 +69,14 @@ new, web3-ready site rather than adding web3 onto the current one.
 | Where | What you'll find |
 | --- | --- |
 | [orgspirituality.org](https://orgspirituality.org) | The official site: beliefs, community, research, and offerings. |
+| [ORG overview (document)](https://www.icloud.com/pages/0438mnIFrZCE0vC6kuGrVjfBQ#ORG) | ORG's own overview of who it is and what it's building, shared on iCloud. |
+| [ORG (Public) on Telegram](https://t.me/ORG_Spirituality) | ORG's public chat, open to anyone. Events and ceremonies, and the members' private groups, are in the [community window](https://octagon-religious-research-group-org.github.io/#community) and [`CONTACTS.md`](https://github.com/Octagon-Religious-Research-Group-ORG/.github/blob/main/CONTACTS.md). |
 | [Entry portal](https://octagon-religious-research-group-org.github.io/) | ORG's front door on GitHub: the nine doors, the latest changes, and the way into everything below. |
 | [ORG AstroLog](https://octagon-religious-research-group-org.github.io/changelog-astro-public/) | ORG's official changelog and library, in plain language, with who made each change. |
 | [Ledger](https://octagon-religious-research-group-org.github.io/changelog-astro-public/ledger) | Every public change to ORG's code, in plain words, grouped by day and by kind. Refreshed daily. |
 | [Map](https://octagon-religious-research-group-org.github.io/map/) | Every place ORG's pages lead, each with a picture, and how the code, hosting, and previews connect. |
 | [Donate](https://octagon-religious-research-group-org.github.io/donate/) | ORG's own giving page, a thank-you list for those who'd like one, and giving with crypto, coming soon. |
+| [A pledge of support](https://octagon-religious-research-group-org.github.io/pledge/) | Say ORG matters to you by signing a short pledge with a wallet: free, nothing sent, nothing recorded, no counts. |
 | [Three directions, living together](https://octagon-religious-research-group-org.github.io/changelog-astro-public/three-directions) | Renan T's design proposal, the spark for the new builds, kept as history. Its three looks live on as lights on every ORG page. |
 | [drasticstatic ORG lab](https://drasticstatic.github.io/O-R-G-astro-public/) | Christopher's lab, where the new builds take shape, with its own [changelog](https://drasticstatic.github.io/O-R-G-astro-public/changelog/) and [ledger](https://drasticstatic.github.io/O-R-G-astro-public/ledger/). |
 | [dApp preview](https://drasticstatic.github.io/O-R-G-dapp-public-preview/) | A web3-ready preview from the lab: an octagon made of ORG's artwork, the beliefs, marbled ink you can stir, and a wallet-connect gift. |
@@ -99,12 +102,21 @@ press <kbd>/</kbd> to search, tap the book for reading mode, and see what's new 
 | --- | --- |
 | **Tripp A** | Founder. Leads ORG and much of the site's content and design. |
 | **Renan T** ([@SCDEVBrazil](https://github.com/SCDEVBrazil)) | Develops the website and drew up the design directions that started ORG's new builds. |
-| **mitch8020** ([@mitch8020](https://github.com/mitch8020)) | Built the original site and its API. |
+| **JP M** ([@mitch8020](https://github.com/mitch8020)) | Built the original site and its API. |
 | **Christopher W** ([@drasticstatic](https://github.com/drasticstatic)) | Looks after ORG's GitHub and builds the previews in his [lab](https://drasticstatic.github.io/O-R-G-astro-public/), with [Alfred](https://github.com/drasticstatic/anthropas-argus-alfred-public-preview). |
 
 ## Community health
 
-- [`CONTACTS.md`](https://github.com/Octagon-Religious-Research-Group-ORG/.github/blob/main/CONTACTS.md): every way to reach ORG (its addresses, the ORG group on Telegram, and Tripp)
+- [`CONTACTS.md`](https://github.com/Octagon-Religious-Research-Group-ORG/.github/blob/main/CONTACTS.md): every way to reach ORG (its addresses, ORG's chats on Telegram, and Tripp)
 - [`SOCIAL-PREVIEWS.md`](https://github.com/Octagon-Religious-Research-Group-ORG/.github/blob/main/SOCIAL-PREVIEWS.md): how to refresh link previews in Telegram, LinkedIn, Facebook and more, and which pages have their own share image
+
+## License
+
+- 💻 **Code:** MIT, see [`LICENSE`](https://github.com/Octagon-Religious-Research-Group-ORG/.github/blob/main/LICENSE)
+- 📝 **Written content** (docs, changelog and library prose, READMEs): CC BY-SA 4.0, see [`LICENSE-CONTENT`](https://github.com/Octagon-Religious-Research-Group-ORG/.github/blob/main/LICENSE-CONTENT)
+- 🏷️ **The name ORG, the octagon and ORG's other marks:** not covered by either license, see [`TRADEMARKS.md`](https://github.com/Octagon-Religious-Research-Group-ORG/.github/blob/main/TRADEMARKS.md) and the [brand guidelines](https://github.com/Octagon-Religious-Research-Group-ORG/brand-assets)
+
+These cover ORG's GitHub home: this profile, the entry portal and the AstroLog. The live site's code
+(`org-frontend`, `org-backend`) and the first site (`ORG-Website`) aren't licensed yet.
 
 <p align="center"><sub>Where science and spirituality meet.</sub></p>
