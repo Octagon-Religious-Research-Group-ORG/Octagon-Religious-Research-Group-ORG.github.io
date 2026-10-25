@@ -107,6 +107,7 @@ press <kbd>/</kbd> to search, tap the book for reading mode, and see what's new 
 
 ## Community health
 
+- [`ONBOARDING.md`](https://github.com/Octagon-Religious-Research-Group-ORG/.github/blob/main/ONBOARDING.md): **joined the organization? start here**: two-factor login, connecting your AI helper, and how we work
 - [`CONTACTS.md`](https://github.com/Octagon-Religious-Research-Group-ORG/.github/blob/main/CONTACTS.md): every way to reach ORG (its addresses, ORG's chats on Telegram, and Tripp)
 - [`SOCIAL-PREVIEWS.md`](https://github.com/Octagon-Religious-Research-Group-ORG/.github/blob/main/SOCIAL-PREVIEWS.md): how to refresh link previews in Telegram, LinkedIn, Facebook and more, and which pages have their own share image
 
