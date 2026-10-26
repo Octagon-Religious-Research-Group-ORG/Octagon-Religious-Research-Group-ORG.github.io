@@ -26,38 +26,19 @@ spirituality and science are practiced side by side. Tripp A founded ORG.
 
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/blotter-strip-night.svg">
-  <img alt="" src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/blotter-strip-prism.svg" width="100%">
-</picture>
-
 ## Enter through any door
 
-The same nine tabs as the home page of [orgspirituality.org](https://orgspirituality.org),<br>
-one perforated sheet with ORG at its center.
+The same nine tabs as the home page of [orgspirituality.org](https://orgspirituality.org), printed as<br>
+one perforated blotter sheet with ORG at its center. Tear off any door.
 
-<table>
-  <tr>
-    <td align="center"><a href="https://orgspirituality.org/about"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/about.webp" width="150" alt=""><br><sub><b>About</b></sub></a></td>
-    <td align="center"><a href="https://orgspirituality.org/community"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/community.webp" width="150" alt=""><br><sub><b>Community</b></sub></a></td>
-    <td align="center"><a href="https://orgspirituality.org/beliefs"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/beliefs.webp" width="150" alt=""><br><sub><b>Beliefs</b></sub></a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://orgspirituality.org/infrastructure"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/infrastructure.webp" width="150" alt=""><br><sub><b>Infrastructure</b></sub></a></td>
-    <td align="center"><a href="https://orgspirituality.org/join"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/core.webp" width="150" alt=""><br><sub><b>Join ORG</b></sub></a></td>
-    <td align="center"><a href="https://orgspirituality.org/research"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/research.webp" width="150" alt=""><br><sub><b>Research</b></sub></a></td>
-  </tr>
-  <tr>
-    <td align="center"><a href="https://orgspirituality.org/legal"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/legal.webp" width="150" alt=""><br><sub><b>Legal</b></sub></a></td>
-    <td align="center"><a href="https://orgspirituality.org/future-ideas"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/future.webp" width="150" alt=""><br><sub><b>Future</b></sub></a></td>
-    <td align="center"><a href="https://orgspirituality.org/offerings"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/gifts.webp" width="150" alt=""><br><sub><b>Gifts</b></sub></a></td>
-  </tr>
-</table>
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/blotter-strip-night.svg">
-  <img alt="" src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/blotter-strip-prism.svg" width="100%">
-</picture>
+<!-- One sheet, cut along its perforations: three tiles per line, nothing between them, so they
+     meet edge to edge. Each door is there twice, for GitHub's light and dark themes; GitHub shows
+     the one whose link ends in #gh-light-mode-only or #gh-dark-mode-only for the viewer's theme. -->
+<p align="center">
+<a href="https://orgspirituality.org/about#gh-light-mode-only"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/about.webp#gh-light-mode-only" width="25%" align="top" alt="About"></a><a href="https://orgspirituality.org/about#gh-dark-mode-only"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/about-night.webp#gh-dark-mode-only" width="25%" align="top" alt="About"></a><a href="https://orgspirituality.org/community#gh-light-mode-only"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/community.webp#gh-light-mode-only" width="25%" align="top" alt="Community"></a><a href="https://orgspirituality.org/community#gh-dark-mode-only"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/community-night.webp#gh-dark-mode-only" width="25%" align="top" alt="Community"></a><a href="https://orgspirituality.org/beliefs#gh-light-mode-only"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/beliefs.webp#gh-light-mode-only" width="25%" align="top" alt="Beliefs"></a><a href="https://orgspirituality.org/beliefs#gh-dark-mode-only"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/beliefs-night.webp#gh-dark-mode-only" width="25%" align="top" alt="Beliefs"></a><br>
+<a href="https://orgspirituality.org/infrastructure#gh-light-mode-only"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/infrastructure.webp#gh-light-mode-only" width="25%" align="top" alt="Infrastructure"></a><a href="https://orgspirituality.org/infrastructure#gh-dark-mode-only"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/infrastructure-night.webp#gh-dark-mode-only" width="25%" align="top" alt="Infrastructure"></a><a href="https://orgspirituality.org/join#gh-light-mode-only"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/core.webp#gh-light-mode-only" width="25%" align="top" alt="Join ORG"></a><a href="https://orgspirituality.org/join#gh-dark-mode-only"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/core-night.webp#gh-dark-mode-only" width="25%" align="top" alt="Join ORG"></a><a href="https://orgspirituality.org/research#gh-light-mode-only"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/research.webp#gh-light-mode-only" width="25%" align="top" alt="Research"></a><a href="https://orgspirituality.org/research#gh-dark-mode-only"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/research-night.webp#gh-dark-mode-only" width="25%" align="top" alt="Research"></a><br>
+<a href="https://orgspirituality.org/legal#gh-light-mode-only"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/legal.webp#gh-light-mode-only" width="25%" align="top" alt="Legal"></a><a href="https://orgspirituality.org/legal#gh-dark-mode-only"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/legal-night.webp#gh-dark-mode-only" width="25%" align="top" alt="Legal"></a><a href="https://orgspirituality.org/future-ideas#gh-light-mode-only"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/future.webp#gh-light-mode-only" width="25%" align="top" alt="Future"></a><a href="https://orgspirituality.org/future-ideas#gh-dark-mode-only"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/future-night.webp#gh-dark-mode-only" width="25%" align="top" alt="Future"></a><a href="https://orgspirituality.org/offerings#gh-light-mode-only"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/gifts.webp#gh-light-mode-only" width="25%" align="top" alt="Gifts"></a><a href="https://orgspirituality.org/offerings#gh-dark-mode-only"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/gifts-night.webp#gh-dark-mode-only" width="25%" align="top" alt="Gifts"></a>
+</p>
 
 </div>
 
