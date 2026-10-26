@@ -24,10 +24,17 @@
 ones most of them agree on, and together they plan octagon-shaped temples and research centers where
 spirituality and science are practiced side by side. Tripp A founded ORG.
 
+<div align="center">
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/blotter-strip-night.svg">
+  <img alt="" src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/blotter-strip-prism.svg" width="100%">
+</picture>
+
 ## Enter through any door
 
-The same nine tabs as the home page of [orgspirituality.org](https://orgspirituality.org), one perforated
-sheet with ORG at its center.
+The same nine tabs as the home page of [orgspirituality.org](https://orgspirituality.org),<br>
+one perforated sheet with ORG at its center.
 
 <table>
   <tr>
@@ -46,6 +53,13 @@ sheet with ORG at its center.
     <td align="center"><a href="https://orgspirituality.org/offerings"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/gifts.webp" width="150" alt=""><br><sub><b>Gifts</b></sub></a></td>
   </tr>
 </table>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/blotter-strip-night.svg">
+  <img alt="" src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/blotter-strip-prism.svg" width="100%">
+</picture>
+
+</div>
 
 ## How ORG decides
 
