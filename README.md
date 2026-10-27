@@ -28,7 +28,7 @@ spirituality and science are practiced side by side. Tripp A founded ORG.
 
 ## Enter through any door
 
-The same nine tabs as the home page of [orgspirituality.org](https://orgspirituality.org), printed as<br>
+The same nine tabs as the home page of [orgspirituality.org](https://orgspirituality.org), printed as
 one perforated blotter sheet with ORG at its center. Tear off any door.
 
 <!-- One sheet, cut along its perforations: three tiles per line, nothing between them, so they
