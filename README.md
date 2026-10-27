@@ -40,6 +40,21 @@ one perforated blotter sheet with ORG at its center. Tear off any door.
 <a href="https://orgspirituality.org/legal#gh-light-mode-only"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/legal.webp#gh-light-mode-only" width="25%" align="top" alt="Legal"></a><a href="https://orgspirituality.org/legal#gh-dark-mode-only"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/legal-night.webp#gh-dark-mode-only" width="25%" align="top" alt="Legal"></a><a href="https://orgspirituality.org/future-ideas#gh-light-mode-only"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/future.webp#gh-light-mode-only" width="25%" align="top" alt="Future"></a><a href="https://orgspirituality.org/future-ideas#gh-dark-mode-only"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/future-night.webp#gh-dark-mode-only" width="25%" align="top" alt="Future"></a><a href="https://orgspirituality.org/offerings#gh-light-mode-only"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/gifts.webp#gh-light-mode-only" width="25%" align="top" alt="Gifts"></a><a href="https://orgspirituality.org/offerings#gh-dark-mode-only"><img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/tiles/gifts-night.webp#gh-dark-mode-only" width="25%" align="top" alt="Gifts"></a>
 </p>
 
+<!-- The same nine doors as words, in the sheet's order and to the same pages, so they are easy to
+     read and tap on a phone, where the sheet's own labels are small. Each &nbsp; keeps a dot with
+     the door before it, so a line never starts with a dot when the row wraps. -->
+<p align="center">
+<a href="https://orgspirituality.org/about">About</a>&nbsp;·
+<a href="https://orgspirituality.org/community">Community</a>&nbsp;·
+<a href="https://orgspirituality.org/beliefs">Beliefs</a>&nbsp;·
+<a href="https://orgspirituality.org/infrastructure">Infrastructure</a>&nbsp;·
+<a href="https://orgspirituality.org/join">Join&nbsp;ORG</a>&nbsp;·
+<a href="https://orgspirituality.org/research">Research</a>&nbsp;·
+<a href="https://orgspirituality.org/legal">Legal</a>&nbsp;·
+<a href="https://orgspirituality.org/future-ideas">Future</a>&nbsp;·
+<a href="https://orgspirituality.org/offerings">Gifts</a>
+</p>
+
 </div>
 
 ## How ORG decides
