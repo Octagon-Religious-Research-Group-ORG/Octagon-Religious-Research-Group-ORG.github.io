@@ -32,6 +32,9 @@
   var LAB = "https://drasticstatic.github.io/O-R-G-astro-public/"; // Christopher's drasticstatic ORG lab
   // The dApp preview is a static export: its pages live at /give, /beliefs (no trailing slash).
   var DAPP = "https://drasticstatic.github.io/O-R-G-dapp-public-preview/";
+  // The reading room's public shelf (ORG's proposals, procedures and decks that it has chosen to share).
+  // Served by Octagon-Religious-Research-Group-ORG/reading-room-public; SOP-IT-002 has the whole route.
+  var ROOM = "https://octagon-religious-research-group-org.github.io/reading-room-public/";
   // The octagon mark's eight wedge colors, clockwise from the top edge.
   var WEDGES = ["#5a43f0", "#9a4dff", "#d04ce8", "#e65aa8", "#f29a3a", "#e4d548", "#6fd84a", "#3ccfe0"];
 
@@ -162,6 +165,7 @@
           priority: 1,
           items: [
             { id: "overview", label: "ORG overview (document)", icon: "file-text", href: OVERVIEW, note: "ORG's own overview, on iCloud" },
+            { id: "room", label: "Proposals, procedures & decks", icon: "book-open-text", href: ROOM, note: "ORG's reading room: what it has chosen to share" },
             { id: "roadmap", label: "Roadmap", icon: "path", href: LOG + "/roadmap", note: "Where these pages are headed" },
             { id: "sustainability", label: "Sustainability", icon: "plant", href: LOG + "/sustainability", note: "What it takes to keep them running" },
             { id: "github", label: "GitHub", icon: "github-logo", href: "https://github.com/Octagon-Religious-Research-Group-ORG", note: "The organization and its code" },
@@ -173,7 +177,7 @@
     footer: {
       label: "ORG, all the ways around",
       groups: [
-        { label: "Explore", icon: "compass", items: ["portal", "porch", "changelog", "library", "ledger", "map"] },
+        { label: "Explore", icon: "compass", items: ["portal", "porch", "changelog", "library", "ledger", "map", "room"] },
         { label: "Get involved", icon: "hand-heart", items: ["community", "contact", "donate", "pledge", { id: "guide", label: "Welcome guide", icon: "signpost", href: "#welcome", open: "guide" }] },
         { label: "ORG's sites", icon: "globe-hemisphere-west", items: ["home", "overview", "directions", "lab", "dapp"] },
         { label: "About this build", icon: "wrench", items: ["roadmap", "sustainability", "github", "brand", { id: "contacts", label: "CONTACTS.md", icon: "address-book", href: CONTACTS }, { id: "source", label: "AstroLog source", icon: "code", href: "https://github.com/Octagon-Religious-Research-Group-ORG/changelog-astro-public" }] },
@@ -492,6 +496,8 @@
         "Faster ink, a brighter trail, and little octagons scattering behind your pointer.": "Tinta más rápida, una estela más brillante y pequeños octágonos que se dispersan tras tu puntero.",
         "Portal": "Portal",
         "ORG's front door on GitHub": "La puerta de entrada de ORG en GitHub",
+        "Proposals, procedures & decks": "Propuestas, procedimientos y presentaciones",
+        "ORG's reading room: what it has chosen to share": "La sala de lectura de ORG: lo que ha elegido compartir",
         "Porch": "Pórtico",
         "The AstroLog's front door": "La puerta de entrada del AstroLog",
         "Changelog": "Registro de cambios",
