@@ -106,6 +106,21 @@ new, web3-ready site rather than adding web3 onto the current one.
 Every ORG page here shares one arrival kit: choose a light, a pace and a contrast when you arrive,
 press <kbd>/</kbd> to search, tap the book for reading mode, and see what's new since your last visit.
 
+## Proposals, procedures and decks
+
+A **proposal** asks ORG for a decision; a **procedure** says how an agreed thing is done; a **deck** walks a
+newcomer through both. Members read all of them in ORG's private reading room. What ORG chooses to share is
+here, one page at a time.
+
+| Where | What you'll find |
+| --- | --- |
+| [The reading room's public shelf](https://octagon-religious-research-group-org.github.io/reading-room-public/) | One page in the browser: the decks and procedures ORG has shared, and how to ask for the members' room. |
+| [ORG procedures, public](https://github.com/Octagon-Religious-Research-Group-ORG/ops-standard-operating-procedures-public) | The procedures ORG's officers have marked public, each with its PDF. Nobody edits it by hand; pages arrive from the members' copy. |
+| [Decks](https://github.com/Octagon-Religious-Research-Group-ORG/.github/tree/main/decks) | Slide walk-throughs, starting with [Welcome to ORG](https://github.com/Octagon-Religious-Research-Group-ORG/.github/blob/main/decks/welcome.marp.pdf): where everything lives, how a change travels, and how to answer. |
+
+<sub>The public shelf and the public procedures opened in October 2026 and fill as officers add pages. Proposals stay
+with members until ORG decides; what it decides shows up in the [AstroLog](https://octagon-religious-research-group-org.github.io/changelog-astro-public/).</sub>
+
 ## <img src="https://raw.githubusercontent.com/Octagon-Religious-Research-Group-ORG/.github/main/profile/assets/icons/layers.svg" width="22" height="22" alt=""> Repositories
 
 | Repository | What it holds |
