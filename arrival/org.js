@@ -22,6 +22,9 @@
   //   (or, for EaMs, their entheogen safety training form) is complete, so it's fine to ask early.
   var VOTING = "https://t.me/+1hlK0bCSBzwyOTkx"; // ORG (Voting): confirmed members vote on all decisions
   var EAMS = "https://t.me/+9gpCph_VVqUwN2Zh"; // ORG EaMs (Entheo-approved Members)
+  // ORG's Discord server, open to anyone (start in ✅┃start-here): a permanent invite meant for
+  // websites, beside the Telegram chats above rather than instead of them.
+  var DISCORD = "https://discord.gg/DkNFvCvVKA";
   // ORG's own documents, shared as iCloud Pages links: the public membership form, and ORG's overview
   // (the "ORG White Paper(s) Home Page" the public chat's description links).
   var MEMBERSHIP = "https://www.icloud.com/pages/051s7hMIDB_LNvP2CEYUZfkew#Membership";
@@ -241,6 +244,14 @@
           join: { href: PUBLIC_CHAT, label: "Join @ORG_Spirituality", note: "Open to everyone." },
         },
         {
+          id: "discord",
+          kind: "discord",
+          name: "ORG's Discord",
+          text: "ORG's Discord server, open to anyone. New here? Start in ✅┃start-here.",
+          public: { href: OVERVIEW, label: "ORG overview (document)", note: "ORG's own overview, on iCloud." },
+          join: { href: DISCORD, label: "Join ORG's Discord", note: "Open to everyone." },
+        },
+        {
           id: "telegram",
           kind: "telegram",
           name: "ORG Events and Ceremonies",
@@ -435,6 +446,7 @@
         { t: "Future ideas", k: "orgspirituality.org", i: "lightbulb", h: SITE + "/future-ideas", x: "future" },
         { t: "Gifts and offerings", k: "orgspirituality.org", i: "gift", h: SITE + "/offerings", x: "shop offerings donate" },
         { t: "ORG (Public) chat", k: "Telegram", i: "telegram-logo", h: PUBLIC_CHAT, pin: true, x: "chat talk community public open everyone org_spirituality join" },
+        { t: "ORG's Discord", k: "Discord", i: "discord-logo", h: DISCORD, x: "chat talk community public open everyone server start here join" },
         { t: "ORG Events and Ceremonies", k: "Telegram", i: "telegram-logo", h: TELEGRAM, x: "chat group community events ceremonies meditation entheo" },
         { t: "ORG (Voting): ask to join", k: "Telegram, private", i: "lock-simple", h: VOTING, x: "members vote decisions private group approval tripp" },
         { t: "ORG EaMs: ask to join", k: "Telegram, private", i: "lock-simple", h: EAMS, x: "entheo approved members safety training private group approval tripp eam" },
@@ -562,6 +574,10 @@
         "ORG's own overview, which the chat links too.": "El panorama propio de ORG, que el chat también enlaza.",
         "Join @ORG_Spirituality": "Únete a @ORG_Spirituality",
         "Open to everyone.": "Abierto a todos.",
+        "ORG's Discord": "El Discord de ORG",
+        "ORG's Discord server, open to anyone. New here? Start in ✅┃start-here.": "El servidor de Discord de ORG, abierto a todos. ¿Recién llegas? Empieza en ✅┃start-here.",
+        "ORG's own overview, on iCloud.": "El panorama propio de ORG, en iCloud.",
+        "Join ORG's Discord": "Únete al Discord de ORG",
         "A collaboration between ORG and Entheo Community. orgspirituality.org's Community page sends people here for news of the monthly meditation ceremony.": "Una colaboración entre ORG y Entheo Community. La página Community de orgspirituality.org manda aquí a quien busque noticias de la ceremonia mensual de meditación.",
         "See what's on": "Ver qué hay",
         "The meetings, events and ceremonies, on orgspirituality.org.": "Las reuniones, los eventos y las ceremonias, en orgspirituality.org.",
